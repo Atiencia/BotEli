@@ -12,7 +12,7 @@ CREATE TABLE public.bot_configs (
     id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
     user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE UNIQUE NOT NULL,
     system_prompt TEXT DEFAULT 'Eres un asistente de ventas amable y directo. Tu objetivo principal es resolver las dudas de los clientes.',
-    model TEXT DEFAULT 'llama-3.1-8b-instant',
+    model TEXT DEFAULT 'openai/gpt-oss-20b',
     temperature NUMERIC DEFAULT 0.7,
     meta_access_token TEXT,
     meta_verify_token TEXT,

@@ -18,7 +18,7 @@ export default function SettingsPage() {
   // Estado local para edición, inicializado con la caché global
   const [config, setConfig] = useState({
     system_prompt: '',
-    model: 'llama-3.1-8b-instant',
+    model: 'openai/gpt-oss-20b',
     temperature: 0.7,
     meta_access_token: '',
     meta_verify_token: '',

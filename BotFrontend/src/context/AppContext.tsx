@@ -144,7 +144,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       });
       setConfig({
         system_prompt: res.data.system_prompt || '',
-        model: res.data.model || 'llama-3.1-8b-instant',
+        model: res.data.model || 'openai/gpt-oss-20b',
         temperature: res.data.temperature ?? 0.7,
         meta_access_token: res.data.meta_access_token || '',
         meta_verify_token: res.data.meta_verify_token || '',

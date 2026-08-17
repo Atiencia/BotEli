@@ -34,7 +34,7 @@
 
 ### Backend (Serverless)
 - **Runtime:** Node.js + Express (Deployed on Vercel Serverless Functions)
-- **AI Inference:** Groq SDK (`llama-3.1-8b-instant`) for ultra-low latency generation.
+- **AI Inference:** Groq SDK (`openai/gpt-oss-20b`) for ultra-low latency generation.
 - **Integrations:** Meta Graph API (Webhooks, Messaging, Media downloading)
 - **Reliability:** Automated Vercel Cron Jobs to prevent database pausing.
 

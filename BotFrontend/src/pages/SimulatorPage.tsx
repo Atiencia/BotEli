@@ -833,7 +833,7 @@ const SimulatorPage = () => {
           <div>
             <label className="block text-sm font-medium text-gray-300 mb-1">Modelo AI</label>
             <select disabled className="w-full bg-gray-900/50 border border-white/10 rounded-lg p-2.5 text-sm text-gray-400 cursor-not-allowed appearance-none">
-              <option>llama-3.1-8b-instant (Groq)</option>
+              <option>openai/gpt-oss-20b (Groq)</option>
             </select>
           </div>
           <div>

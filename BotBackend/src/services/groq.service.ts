@@ -11,7 +11,7 @@ export const generateResponse = async (messages: { role: 'system' | 'user' | 'as
   try {
     const chatCompletion = await groq.chat.completions.create({
       messages: messages,
-      model: 'llama-3.1-8b-instant',
+      model: 'openai/gpt-oss-20b',
       temperature: 0.5,
       max_tokens: 500,
     });

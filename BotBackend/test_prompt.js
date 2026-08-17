@@ -64,7 +64,7 @@ PASO 2: ¿Es una pregunta general simple (saludo, agradecimiento, pregunta sobre
       { role: 'system', content: fullSystemPrompt },
       { role: 'user', content: question }
     ],
-    model: botConfig.model || 'llama-3.1-8b-instant',
+    model: botConfig.model || 'openai/gpt-oss-20b',
     temperature: botConfig.temperature ?? 0.7,
     max_tokens: 1024,
   });

@@ -57,7 +57,7 @@ PASO 2: ¿Es una pregunta general simple (saludo, agradecimiento, pregunta sobre
     try {
       const chatCompletion = await this.groq.chat.completions.create({
         messages,
-        model: model || 'llama-3.1-8b-instant',
+        model: model || 'openai/gpt-oss-20b',
         temperature: temperature ?? 0.7,
         max_tokens: 1024,
       });
@@ -123,7 +123,7 @@ Tu salida: {"categoria": "¿Tienen la remera oversize lila?", "conocimiento": "L
           { role: 'system', content: systemPrompt },
           { role: 'user', content: `Pregunta: ${question}\nRespuesta: ${answer}` }
         ],
-        model: 'llama-3.1-8b-instant',
+        model: 'openai/gpt-oss-20b',
         temperature: 0.1,
       });
 

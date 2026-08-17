@@ -20,7 +20,7 @@ Reglas:
         { role: 'system', content: systemPrompt },
         { role: 'user', content: `Pregunta: ¿Tienen una sucursal en el Centro Comercial shopping?\nRespuesta: No contamos con ninguna sucursal en ese centro comercial, tenemos sucursales en centros comerciales como Unicenter y Abasto, solamente en la provincia de Buenos Aires y Entre Ríos` }
       ],
-      model: 'llama-3.1-8b-instant',
+      model: 'openai/gpt-oss-20b',
       temperature: 0.1,
     });
     

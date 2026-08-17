@@ -23,7 +23,7 @@ export const getBotConfig = async (req: AuthRequest, res: Response) => {
       // Si no existe, devolver una estructura por defecto para el frontend
       return res.status(200).json({
         system_prompt: 'Eres un asistente útil.',
-        model: 'llama-3.1-8b-instant',
+        model: 'openai/gpt-oss-20b',
         temperature: 0.7,
         meta_access_token: '',
         meta_verify_token: '',

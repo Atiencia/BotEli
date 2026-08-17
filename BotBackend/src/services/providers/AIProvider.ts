@@ -5,7 +5,7 @@ export interface AIProvider {
    * @param knowledge El texto plano con la información de la empresa.
    * @param chatHistory El historial de la conversación actual.
    * @param userMessage El nuevo mensaje del usuario.
-   * @param model El identificador del modelo (ej. 'llama-3.1-8b-instant').
+   * @param model El identificador del modelo (ej. 'openai/gpt-oss-20b').
    * @param temperature Nivel de creatividad del 0 al 1.
    */
   generateResponse(
