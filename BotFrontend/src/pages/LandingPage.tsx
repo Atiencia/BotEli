@@ -19,7 +19,7 @@ export default function LandingPage() {
             <Bot className="w-6 h-6 text-white" />
           </div>
           <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-blue-400">
-            Eli System
+            Bot Eli
           </span>
         </div>
         
@@ -164,7 +164,7 @@ export default function LandingPage() {
                 <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-sky-500 to-blue-600 flex items-center justify-center">
                   <Bot className="w-4 h-4 text-white" />
                 </div>
-                <span className="font-bold text-white">Eli System</span>
+                <span className="font-bold text-white">Bot Eli</span>
               </div>
               <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
                 Plataforma de atención al cliente impulsada por inteligencia artificial para Instagram y Messenger.
@@ -195,7 +195,7 @@ export default function LandingPage() {
           </div>
 
           <div className="border-t border-white/5 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-gray-600 text-sm">&copy; {new Date().getFullYear()} Eli System.</p>
+            <p className="text-gray-600 text-sm">&copy; {new Date().getFullYear()} Bot Eli.</p>
             <p className="text-gray-700 text-xs">DEVELOPED BY JAVIER</p>
           </div>
         </div>
