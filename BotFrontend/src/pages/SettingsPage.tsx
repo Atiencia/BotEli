@@ -127,7 +127,18 @@ export default function SettingsPage() {
                 placeholder="Eres un asistente amigable especializado en ventas de cruceros..."
               />
             </div>
-            
+
+            <div>
+              <label className="block text-sm font-medium text-gray-400 mb-2">Modelo de Inteligencia Artificial (Groq)</label>
+              <p className="text-xs text-gray-500 mb-3">Si Groq cambia o depreca sus modelos en el futuro, simplemente escribe el nuevo identificador aquí.</p>
+              <input
+                type="text"
+                value={config.model}
+                onChange={(e) => setConfig({...config, model: e.target.value})}
+                className="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-gray-300 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition-all font-mono text-sm"
+                placeholder="ej. openai/gpt-oss-20b"
+              />
+            </div>
 
           </div>
         </div>
