@@ -17,6 +17,7 @@ vi.mock('../../config/supabase', () => ({
 vi.mock('../../services/MetaService', () => ({
   metaService: {
     sendMessage: vi.fn(),
+    getUserProfile: vi.fn().mockResolvedValue({ first_name: 'Test', last_name: 'User', profile_pic: '' }),
   }
 }));
 
