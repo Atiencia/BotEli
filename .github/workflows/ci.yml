@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./backend
+        working-directory: ./BotBackend
     steps:
     - uses: actions/checkout@v4
     - name: Use Node.js
@@ -19,7 +19,7 @@ jobs:
       with:
         node-version: '20.x'
         cache: 'npm'
-        cache-dependency-path: './backend/package-lock.json'
+        cache-dependency-path: './BotBackend/package-lock.json'
     - run: npm ci
     - run: npm run test
 
@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./frontend
+        working-directory: ./BotFrontend
     steps:
     - uses: actions/checkout@v4
     - name: Use Node.js
@@ -35,6 +35,6 @@ jobs:
       with:
         node-version: '20.x'
         cache: 'npm'
-        cache-dependency-path: './frontend/package-lock.json'
+        cache-dependency-path: './BotFrontend/package-lock.json'
     - run: npm ci
     - run: npm run build
