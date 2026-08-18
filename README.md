@@ -1,6 +1,6 @@
 # Eli Bot - AI Customer Service SaaS
 
-[![Vercel Deployment](https://img.shields.io/badge/Deployed_on-Vercel-black?style=for-the-badge&logo=vercel)](https://botfrontend.vercel.app/)
+[![Vercel Deployment](https://img.shields.io/badge/Deployed_on-Vercel-black?style=for-the-badge&logo=vercel)](https://boteli.vercel.app/)
 [![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.com/)
@@ -8,7 +8,10 @@
 
 **Eli Bot** is a production-ready, AI-powered Customer Service SaaS designed to automate Instagram and Messenger interactions. It leverages state-of-the-art LLMs (Llama 3.1) and Semantic Search (RAG) to provide autonomous, accurate responses while seamlessly blending with a real-time human handoff interface.
 
-**[Try the Interactive Live Demo!](https://botfrontend.vercel.app/)**
+**[Link to the Deployed System](https://boteli.vercel.app/)**
+
+**[Video of the bot working on social networks](PON_AQUI_LA_URL_DE_TU_VIDEO)**
+*(Note: Direct testing on Instagram is currently limited to authorized accounts due to Meta's developer policies. Please watch the video above to see the full bot interaction in a real environment.)*
 
 ---
 
@@ -94,7 +97,7 @@ npm run test
 
 # Eli Bot - SaaS de Servicio al Cliente con IA
 
-[![Vercel Deployment](https://img.shields.io/badge/Deployed_on-Vercel-black?style=for-the-badge&logo=vercel)](https://botfrontend.vercel.app/)
+[![Vercel Deployment](https://img.shields.io/badge/Deployed_on-Vercel-black?style=for-the-badge&logo=vercel)](https://boteli.vercel.app/)
 [![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.com/)
@@ -102,7 +105,10 @@ npm run test
 
 **Eli Bot** es un SaaS de servicio al cliente impulsado por IA, listo para producción y diseñado para automatizar interacciones en Instagram y Messenger. Utiliza LLMs de última generación y Búsqueda Semántica (RAG) para proporcionar respuestas autónomas y precisas, al mismo tiempo que se integra perfectamente con una interfaz de transferencia a humanos en tiempo real.
 
-**[¡Prueba la Demo Interactiva en Vivo!](https://botfrontend.vercel.app/)**
+**[Enlace al Sistema Desplegado](https://boteli.vercel.app/)**
+
+**[Video del bot funcionando en redes sociales](PON_AQUI_LA_URL_DE_TU_VIDEO)**
+*(Nota: Las pruebas directas en Instagram están limitadas temporalmente a cuentas autorizadas debido a las políticas de Meta. Por favor, mira el video anterior para ver la interacción completa del bot funcionando en un entorno real).*
 
 ---
 
