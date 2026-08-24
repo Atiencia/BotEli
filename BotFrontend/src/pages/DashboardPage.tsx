@@ -1,98 +1,128 @@
-﻿import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { Users, MessageCircle, Bot, Loader2 } from 'lucide-react';
 import { useAppContext } from '../context/AppContext';
+import { motion } from 'framer-motion';
 
 export default function DashboardPage() {
   const { analyticsData: data, isAnalyticsLoading: isLoading, analyticsError: error } = useAppContext();
 
   if (isLoading) {
     return (
-      <div className="h-screen flex items-center justify-center text-sky-400 gap-3">
-        <Loader2 className="w-8 h-8 animate-spin" />
+      <div className="min-h-screen flex items-center justify-center bg-transparent">
+        <Loader2 className="w-8 h-8 text-zinc-400 dark:text-zinc-600 animate-spin" />
       </div>
     );
   }
 
   if (error || !data) {
     return (
-      <div className="h-screen flex items-center justify-center">
-        <div className="bg-red-500/10 border border-red-500/20 text-red-400 p-6 rounded-2xl max-w-md text-center">
+      <div className="min-h-screen flex items-center justify-center bg-transparent">
+        <div className="bg-red-500/10 border border-red-500/20 text-red-600 dark:text-red-400 p-6 rounded-xl max-w-md text-center text-sm font-medium">
           {error || 'No se pudieron cargar los datos'}
         </div>
       </div>
     );
   }
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { type: 'spring' as const, stiffness: 300, damping: 24 } }
+  };
+
   return (
-    <div className="p-8 max-w-6xl mx-auto h-screen flex flex-col">
-      <div className="mb-8">
-        <h2 className="text-3xl font-bold text-white mb-2">Métricas de Rendimiento</h2>
-        <p className="text-gray-400">Analiza el volumen de conversaciones y el ahorro de tiempo gracias a tu bot.</p>
-      </div>
+    <div className="p-6 md:p-10 max-w-6xl mx-auto min-h-screen bg-transparent font-sans selection:bg-sky-500/30 pb-24">
+      <motion.div 
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="mb-10 border-b border-zinc-200 dark:border-zinc-800 pb-8"
+      >
+        <h2 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-white mb-2">Rendimiento</h2>
+        <p className="text-zinc-500 dark:text-zinc-400 text-sm md:text-base">Métricas en tiempo real del volumen y ahorro generado por tu IA.</p>
+      </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        <div className="glass p-6 rounded-2xl border border-gray-800">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-full bg-sky-500/20 flex items-center justify-center">
-              <Users className="w-6 h-6 text-sky-400" />
-            </div>
-            <div>
-              <p className="text-sm text-gray-400">Total Clientes</p>
-              <p className="text-3xl font-bold text-white">{data.totalCustomers}</p>
+      <motion.div 
+        variants={containerVariants}
+        initial="hidden"
+        animate="show"
+        className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10"
+      >
+        <motion.div variants={itemVariants} className="bg-white dark:bg-zinc-900/50 p-8 rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-sm transition-colors hover:border-zinc-300 dark:hover:border-zinc-700">
+          <div className="flex items-center justify-between mb-4">
+            <p className="text-sm font-semibold text-zinc-500 dark:text-zinc-400 tracking-wide uppercase">Clientes</p>
+            <div className="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center">
+              <Users className="w-5 h-5 text-zinc-700 dark:text-zinc-300" />
             </div>
           </div>
-        </div>
+          <div>
+            <p className="text-4xl font-bold text-zinc-900 dark:text-white tracking-tighter">{data.totalCustomers}</p>
+          </div>
+        </motion.div>
         
-        <div className="glass p-6 rounded-2xl border border-gray-800">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center">
-              <Bot className="w-6 h-6 text-emerald-400" />
-            </div>
-            <div>
-              <p className="text-sm text-gray-400">Mensajes del Bot</p>
-              <p className="text-3xl font-bold text-white">{data.totalBotMessages}</p>
+        <motion.div variants={itemVariants} className="bg-white dark:bg-zinc-900/50 p-8 rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-sm transition-colors hover:border-zinc-300 dark:hover:border-zinc-700">
+          <div className="flex items-center justify-between mb-4">
+            <p className="text-sm font-semibold text-zinc-500 dark:text-zinc-400 tracking-wide uppercase">Mensajes IA</p>
+            <div className="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center">
+              <Bot className="w-5 h-5 text-zinc-700 dark:text-zinc-300" />
             </div>
           </div>
-        </div>
+          <div>
+            <p className="text-4xl font-bold text-zinc-900 dark:text-white tracking-tighter">{data.totalBotMessages}</p>
+          </div>
+        </motion.div>
 
-        <div className="glass p-6 rounded-2xl border border-gray-800">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center">
-              <MessageCircle className="w-6 h-6 text-purple-400" />
-            </div>
-            <div>
-              <p className="text-sm text-gray-400">Tiempo Ahorrado (Aprox)</p>
-              <p className="text-3xl font-bold text-white">
-                {/* Asumiendo que cada respuesta del bot le ahorra 2 minutos al humano */}
-                {Math.round((data.totalBotMessages * 2) / 60)} horas
-              </p>
+        <motion.div variants={itemVariants} className="bg-white dark:bg-zinc-900/50 p-8 rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-sm transition-colors hover:border-zinc-300 dark:hover:border-zinc-700">
+          <div className="flex items-center justify-between mb-4">
+            <p className="text-sm font-semibold text-zinc-500 dark:text-zinc-400 tracking-wide uppercase">Horas Ahorradas</p>
+            <div className="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center">
+              <MessageCircle className="w-5 h-5 text-zinc-700 dark:text-zinc-300" />
             </div>
           </div>
-        </div>
-      </div>
+          <div>
+            <p className="text-4xl font-bold text-zinc-900 dark:text-white tracking-tighter">
+              {Math.round((data.totalBotMessages * 2) / 60)} <span className="text-xl font-medium text-zinc-400 dark:text-zinc-500">hrs</span>
+            </p>
+          </div>
+        </motion.div>
+      </motion.div>
 
-      <div className="flex-1 glass rounded-2xl border border-gray-800 p-6 flex flex-col">
-        <h3 className="text-xl font-semibold text-white mb-6">Actividad de los últimos 7 días</h3>
-        <div className="flex-1 min-h-[300px]">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        className="bg-white dark:bg-zinc-900/50 rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-sm p-8 flex flex-col"
+      >
+        <h3 className="text-lg font-semibold text-zinc-900 dark:text-white tracking-tight mb-8">Actividad de los últimos 7 días</h3>
+        <div className="w-full h-[400px]">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
               data={data.chartData}
-              margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+              margin={{ top: 10, right: 10, left: -20, bottom: 0 }}
             >
-              <CartesianGrid strokeDasharray="3 3" stroke="#374151" vertical={false} />
-              <XAxis dataKey="date" stroke="#9CA3AF" />
-              <YAxis stroke="#9CA3AF" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#52525b" strokeOpacity={0.2} vertical={false} />
+              <XAxis dataKey="date" stroke="#71717a" fontSize={12} tickLine={false} axisLine={false} dy={10} />
+              <YAxis stroke="#71717a" fontSize={12} tickLine={false} axisLine={false} dx={-10} />
               <Tooltip 
-                contentStyle={{ backgroundColor: '#111827', borderColor: '#374151', color: '#F3F4F6' }}
-                itemStyle={{ color: '#E5E7EB' }}
+                cursor={{ fill: '#71717a', opacity: 0.1 }}
+                contentStyle={{ backgroundColor: '#18181b', borderColor: '#27272a', color: '#fff', borderRadius: '8px', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
+                itemStyle={{ color: '#fff', fontSize: '14px' }}
+                labelStyle={{ color: '#a1a1aa', marginBottom: '4px' }}
               />
-              <Legend />
-              <Bar dataKey="user" name="Mensajes Recibidos" fill="#6366f1" radius={[4, 4, 0, 0]} />
-              <Bar dataKey="bot" name="Respuestas del Bot" fill="#10b981" radius={[4, 4, 0, 0]} />
+              <Legend wrapperStyle={{ paddingTop: '20px' }} iconType="circle" />
+              <Bar dataKey="user" name="Mensajes Recibidos" fill="#71717a" radius={[4, 4, 0, 0]} barSize={32} />
+              <Bar dataKey="bot" name="Respuestas de IA" fill="#0ea5e9" radius={[4, 4, 0, 0]} barSize={32} />
             </BarChart>
           </ResponsiveContainer>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
