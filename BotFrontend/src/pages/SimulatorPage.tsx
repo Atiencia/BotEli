@@ -279,19 +279,19 @@ const SimulatorPage = () => {
   const renderChatBot = () => (
     <div className="flex flex-col h-full items-center justify-center p-4">
       {/* iPhone Device Frame */}
-      <div className="relative w-full max-w-[375px] h-[750px] max-h-full bg-black rounded-[50px] border-[12px] border-gray-900 shadow-2xl flex flex-col overflow-hidden shrink-0">
+      <div className="relative w-full max-w-[375px] h-[750px] max-h-full bg-black rounded-[50px] border-[12px] border-zinc-900 shadow-2xl flex flex-col overflow-hidden shrink-0">
         
         {/* Dynamic Island / Notch area */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-gray-900 rounded-b-2xl z-20"></div>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-zinc-900 rounded-b-2xl z-20"></div>
 
         {/* IG Direct Header */}
-        <div className="flex items-center justify-between px-3 py-3 pt-8 bg-black border-b border-gray-800 z-10 shrink-0">
+        <div className="flex items-center justify-between px-3 py-3 pt-8 bg-black border-b border-zinc-900 z-10 shrink-0">
           <div className="flex items-center gap-2">
             <button className="text-white hover:opacity-70 transition-opacity">
               <ChevronLeft className="w-8 h-8 -ml-2" />
             </button>
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full overflow-hidden bg-gray-800 border border-gray-700">
+              <div className="w-8 h-8 rounded-full overflow-hidden bg-zinc-800 border border-zinc-700">
                 <img src="/logo.jpg" alt="StyleAura" className="w-full h-full object-cover opacity-80" onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.parentElement!.innerHTML = '<div class="w-full h-full bg-sky-900 flex items-center justify-center text-xs font-bold text-sky-200">SA</div>'; }} />
               </div>
               <div className="flex flex-col">
@@ -299,7 +299,7 @@ const SimulatorPage = () => {
                   <span className="text-white text-[15px] font-semibold tracking-tight">styleaura_oficial</span>
                   <svg aria-label="Verificado" className="w-3.5 h-3.5 text-blue-500 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.9 14.7L6 12.6l1.5-1.5 2.6 2.6 6.4-6.4 1.5 1.5-7.9 7.9z"></path></svg>
                 </div>
-                <span className="text-gray-400 text-[12px]">Cuenta comercial</span>
+                <span className="text-zinc-500 text-[12px]">Cuenta comercial</span>
               </div>
             </div>
           </div>
@@ -314,16 +314,16 @@ const SimulatorPage = () => {
           
           {/* Profile Info in chat */}
           <div className="flex flex-col items-center justify-center pt-4 pb-6 gap-2">
-            <div className="w-24 h-24 rounded-full overflow-hidden bg-gray-800 border border-gray-700">
+            <div className="w-24 h-24 rounded-full overflow-hidden bg-zinc-800 border border-zinc-700">
                 <img src="/logo.jpg" alt="StyleAura" className="w-full h-full object-cover opacity-80" onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.parentElement!.innerHTML = '<div class="w-full h-full bg-sky-900 flex items-center justify-center text-3xl font-bold text-sky-200">SA</div>'; }} />
             </div>
             <h2 className="text-white text-xl font-semibold mt-1">StyleAura Oficial</h2>
-            <p className="text-gray-400 text-[14px]">styleaura_oficial • Instagram</p>
-            <p className="text-gray-400 text-[14px]">24 mil seguidores • 150 publicaciones</p>
-            <button className="bg-gray-800 text-white text-[14px] font-semibold px-4 py-1.5 rounded-lg mt-2">Ver perfil</button>
+            <p className="text-zinc-500 text-[14px]">styleaura_oficial • Instagram</p>
+            <p className="text-zinc-500 text-[14px]">24 mil seguidores • 150 publicaciones</p>
+            <button className="bg-zinc-800 text-white text-[14px] font-semibold px-4 py-1.5 rounded-lg mt-2 hover:bg-zinc-700 transition-colors">Ver perfil</button>
           </div>
           
-          <div className="text-center text-gray-500 text-[12px] my-4 font-medium">Hoy 2:30 p.m.</div>
+          <div className="text-center text-zinc-600 text-[12px] my-4 font-medium">Hoy 2:30 p.m.</div>
 
           {messages.map((msg, idx) => (
             <div key={idx} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'} mb-1 group`}>
@@ -359,7 +359,7 @@ const SimulatorPage = () => {
         </div>
 
         {/* IG Direct Input Area / Handoff Banner */}
-        <div className="px-3 py-3 bg-black border-t border-gray-900 pb-8 shrink-0 relative">
+        <div className="px-3 py-3 bg-black border-t border-zinc-900 pb-8 shrink-0 relative">
           
           {showReactivated && (
             <div className="absolute -top-10 left-1/2 -translate-x-1/2 bg-green-500/90 text-white text-xs font-semibold px-4 py-1.5 rounded-full shadow-lg flex items-center gap-1.5 animate-fade-in-up z-20">
@@ -393,7 +393,7 @@ const SimulatorPage = () => {
               </button>
               <div className="flex-1 relative flex items-center">
                 {isRecording ? (
-                  <div className="w-full bg-[#262626] rounded-full py-2.5 pl-4 pr-12 flex items-center justify-between overflow-hidden">
+                  <div className="w-full bg-zinc-900 rounded-full py-2.5 pl-4 pr-12 flex items-center justify-between overflow-hidden">
                     <div className="flex items-center gap-2">
                       <div className="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></div>
                       <span className="text-white text-[15px] font-medium">
@@ -418,7 +418,7 @@ const SimulatorPage = () => {
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     placeholder="Mensaje..."
-                    className="w-full bg-[#262626] rounded-full py-2.5 pl-4 pr-10 text-[15px] text-white placeholder-gray-500 focus:outline-none"
+                    className="w-full bg-zinc-900 rounded-full py-2.5 pl-4 pr-10 text-[15px] text-white placeholder-zinc-500 focus:outline-none"
                     disabled={isLoading}
                   />
                 )}
@@ -461,33 +461,33 @@ const SimulatorPage = () => {
   );
 
   const renderConversaciones = () => (
-    <div className="flex h-full border border-white/10 rounded-xl overflow-hidden bg-gray-950/50">
+    <div className="flex h-full border border-zinc-800/80 rounded-xl overflow-hidden bg-[#0a0a0a]">
       {/* Sidebar */}
-      <div className="w-1/3 border-r border-white/10 bg-gray-900/30 flex flex-col hidden md:flex">
-        <div className="p-4 border-b border-white/10">
+      <div className="w-1/3 border-r border-zinc-800/80 bg-zinc-900/30 flex flex-col hidden md:flex">
+        <div className="p-4 border-b border-zinc-800/80">
           <div className="relative">
-            <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" />
+            <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500" />
             <input 
               type="text" 
               placeholder="Buscar..." 
-              className="w-full bg-gray-950 border border-gray-800 rounded-lg py-2 pl-9 pr-3 text-sm text-gray-300 focus:outline-none focus:border-sky-500/50 pointer-events-none"
+              className="w-full bg-zinc-950 border border-zinc-800 rounded-lg py-2 pl-9 pr-3 text-sm text-zinc-300 focus:outline-none pointer-events-none"
               readOnly
             />
           </div>
         </div>
         <div className="flex-1 overflow-y-auto">
           {/* Active User */}
-          <div className="p-3 border-b border-white/5 bg-sky-900/20 cursor-pointer flex items-center gap-3 relative">
-            <div className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center shrink-0 relative">
-              <User className="w-5 h-5 text-gray-400" />
-              <Instagram className="w-4 h-4 absolute -bottom-1 -right-1 bg-gray-900 rounded-full shadow-[0_0_0_2px_#111827]" />
+          <div className="p-3 border-b border-zinc-800/50 bg-sky-900/20 cursor-pointer flex items-center gap-3 relative">
+            <div className="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center shrink-0 relative">
+              <User className="w-5 h-5 text-zinc-400" />
+              <Instagram className="w-4 h-4 absolute -bottom-1 -right-1 bg-zinc-900 rounded-full shadow-[0_0_0_2px_#111827]" />
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex justify-between items-start">
                 <h4 className="text-sm font-medium text-white truncate">
                   María García
                 </h4>
-                <span className="text-[10px] text-gray-500">2:41 p.m.</span>
+                <span className="text-[10px] text-zinc-500">2:41 p.m.</span>
               </div>
               <p className="text-xs text-sky-400 truncate mt-0.5">Sí, qué colores tienen?</p>
               <div className="mt-1 flex items-center gap-1">
@@ -499,19 +499,19 @@ const SimulatorPage = () => {
           </div>
           
           {/* Other Users */}
-          <div className="p-3 border-b border-white/5 hover:bg-gray-800/30 cursor-pointer flex items-center gap-3 opacity-70">
-            <div className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center shrink-0 relative">
-              <User className="w-5 h-5 text-gray-400" />
-              <Messenger className="w-4 h-4 absolute -bottom-1 -right-1 bg-gray-900 rounded-full shadow-[0_0_0_2px_#111827]" />
+          <div className="p-3 border-b border-zinc-800/50 hover:bg-zinc-800/30 cursor-pointer flex items-center gap-3 opacity-70">
+            <div className="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center shrink-0 relative">
+              <User className="w-5 h-5 text-zinc-400" />
+              <Messenger className="w-4 h-4 absolute -bottom-1 -right-1 bg-zinc-900 rounded-full shadow-[0_0_0_2px_#111827]" />
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex justify-between items-start">
                 <h4 className="text-sm font-medium text-white truncate">
                   Carlos López
                 </h4>
-                <span className="text-[10px] text-gray-500">1:15 p.m.</span>
+                <span className="text-[10px] text-zinc-500">1:15 p.m.</span>
               </div>
-              <p className="text-xs text-gray-400 truncate mt-0.5">Necesito hablar con alguien</p>
+              <p className="text-xs text-zinc-400 truncate mt-0.5">Necesito hablar con alguien</p>
               <div className="mt-1 flex items-center gap-1">
                 <span className="w-2 h-2 rounded-full bg-amber-500"></span>
                 <span className="text-[10px] text-amber-500 uppercase tracking-wider">Humano al mando</span>
@@ -519,19 +519,19 @@ const SimulatorPage = () => {
             </div>
           </div>
 
-          <div className="p-3 border-b border-white/5 hover:bg-gray-800/30 cursor-pointer flex items-center gap-3 opacity-70">
-            <div className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center shrink-0 relative">
-              <User className="w-5 h-5 text-gray-400" />
-              <Messenger className="w-4 h-4 absolute -bottom-1 -right-1 bg-gray-900 rounded-full shadow-[0_0_0_2px_#111827]" />
+          <div className="p-3 border-b border-zinc-800/50 hover:bg-zinc-800/30 cursor-pointer flex items-center gap-3 opacity-70">
+            <div className="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center shrink-0 relative">
+              <User className="w-5 h-5 text-zinc-400" />
+              <Messenger className="w-4 h-4 absolute -bottom-1 -right-1 bg-zinc-900 rounded-full shadow-[0_0_0_2px_#111827]" />
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex justify-between items-start">
                 <h4 className="text-sm font-medium text-white truncate">
                   Ana Rodríguez
                 </h4>
-                <span className="text-[10px] text-gray-500">Ayer</span>
+                <span className="text-[10px] text-zinc-500">Ayer</span>
               </div>
-              <p className="text-xs text-gray-400 truncate mt-0.5">Gracias por la información</p>
+              <p className="text-xs text-zinc-400 truncate mt-0.5">Gracias por la información</p>
               <div className="mt-1 flex items-center gap-1">
                 <span className="w-2 h-2 rounded-full bg-green-500"></span>
                 <span className="text-[10px] text-green-500 uppercase tracking-wider">Bot Activo</span>
@@ -543,16 +543,16 @@ const SimulatorPage = () => {
       
       {/* Main Panel */}
       <div className="w-full md:w-2/3 flex flex-col relative">
-        <div className="p-4 border-b border-white/10 bg-gray-900/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-0">
+        <div className="p-4 border-b border-zinc-800/80 bg-zinc-900/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-0">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center">
-              <User className="w-5 h-5 text-gray-400" />
+            <div className="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center">
+              <User className="w-5 h-5 text-zinc-400" />
             </div>
             <div>
               <h3 className="font-medium text-white text-sm flex items-center gap-2">
                 Cliente: María García <Instagram className="w-4 h-4 text-pink-500" />
               </h3>
-              <p className="text-xs text-gray-400 flex items-center gap-1">
+              <p className="text-xs text-zinc-400 flex items-center gap-1">
                 <Clock className="w-3 h-3" /> Última act: 2:41:58 p.m.
               </p>
             </div>
@@ -570,19 +570,19 @@ const SimulatorPage = () => {
           </button>
         </div>
 
-        <div className="flex-1 overflow-y-auto p-4 space-y-6 bg-[#0a0a0a]/50">
+        <div className="flex-1 overflow-y-auto p-4 space-y-6 bg-black/40">
           {/* Msg 1 */}
           <div className="flex gap-3 justify-start">
-            <div className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center shrink-0 mt-4">
-              <User className="w-4 h-4 text-gray-400" />
+            <div className="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center shrink-0 mt-4">
+              <User className="w-4 h-4 text-zinc-400" />
             </div>
             <div className="max-w-[85%] sm:max-w-[75%]">
-              <div className="flex items-center gap-1 mb-1 ml-1 text-[11px] text-gray-500">
+              <div className="flex items-center gap-1 mb-1 ml-1 text-[11px] text-zinc-500">
                 <span className="font-medium">Cliente</span>
                 <span>•</span>
                 <span>2:35 p.m.</span>
               </div>
-              <div className="bg-gray-800 border border-white/5 text-gray-200 px-4 py-2.5 rounded-2xl rounded-tl-sm text-sm">
+              <div className="bg-zinc-800 border border-zinc-700/50 text-zinc-200 px-4 py-2.5 rounded-2xl rounded-tl-sm text-sm">
                 Hola, tienen polos oversize?
               </div>
             </div>
@@ -591,7 +591,7 @@ const SimulatorPage = () => {
           {/* Msg 2 */}
           <div className="flex gap-3 justify-end">
             <div className="max-w-[85%] sm:max-w-[75%]">
-              <div className="flex items-center justify-end gap-1 mb-1 mr-1 text-[11px] text-gray-500">
+              <div className="flex items-center justify-end gap-1 mb-1 mr-1 text-[11px] text-zinc-500">
                 <span>2:35 p.m.</span>
                 <span>•</span>
                 <span className="font-medium text-sky-400">Eli</span>
@@ -607,16 +607,16 @@ const SimulatorPage = () => {
 
           {/* Msg 3 */}
           <div className="flex gap-3 justify-start">
-            <div className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center shrink-0 mt-4">
-              <User className="w-4 h-4 text-gray-400" />
+            <div className="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center shrink-0 mt-4">
+              <User className="w-4 h-4 text-zinc-400" />
             </div>
             <div className="max-w-[85%] sm:max-w-[75%]">
-              <div className="flex items-center gap-1 mb-1 ml-1 text-[11px] text-gray-500">
+              <div className="flex items-center gap-1 mb-1 ml-1 text-[11px] text-zinc-500">
                 <span className="font-medium">Cliente</span>
                 <span>•</span>
                 <span>2:41 p.m.</span>
               </div>
-              <div className="bg-gray-800 border border-white/5 text-gray-200 px-4 py-2.5 rounded-2xl rounded-tl-sm text-sm">
+              <div className="bg-zinc-800 border border-zinc-700/50 text-zinc-200 px-4 py-2.5 rounded-2xl rounded-tl-sm text-sm">
                 Sí, qué colores tienen?
               </div>
             </div>
@@ -625,7 +625,7 @@ const SimulatorPage = () => {
           {/* Msg 4 */}
           <div className="flex gap-3 justify-end">
             <div className="max-w-[85%] sm:max-w-[75%]">
-              <div className="flex items-center justify-end gap-1 mb-1 mr-1 text-[11px] text-gray-500">
+              <div className="flex items-center justify-end gap-1 mb-1 mr-1 text-[11px] text-zinc-500">
                 <span>2:41 p.m.</span>
                 <span>•</span>
                 <span className="font-medium text-sky-400">Eli</span>
@@ -640,25 +640,25 @@ const SimulatorPage = () => {
           </div>
         </div>
 
-        <div className="p-4 border-t border-white/10 bg-gray-900/50">
+        <div className="p-4 border-t border-zinc-800/80 bg-zinc-900/50">
           <div className="flex items-center gap-2">
-            <button disabled className="p-2 text-gray-500 hover:text-gray-400 transition-colors cursor-not-allowed hidden sm:block">
+            <button disabled className="p-2 text-zinc-500 hover:text-zinc-400 transition-colors cursor-not-allowed hidden sm:block">
               <ImageIcon className="w-5 h-5" />
             </button>
             <input
               type="text"
               placeholder="Escribe un mensaje para intervenir..."
               disabled
-              className="flex-1 bg-gray-950 border border-gray-800 rounded-lg py-2.5 px-4 text-sm text-gray-300 placeholder-gray-600 focus:outline-none cursor-not-allowed"
+              className="flex-1 bg-zinc-950 border border-zinc-800 rounded-lg py-2.5 px-4 text-sm text-zinc-300 placeholder-zinc-600 focus:outline-none cursor-not-allowed"
             />
-            <button disabled className="p-2 bg-gray-800 text-gray-500 rounded-lg cursor-not-allowed">
+            <button disabled className="p-2 bg-zinc-800 text-zinc-500 rounded-lg cursor-not-allowed">
               <Send className="w-5 h-5" />
             </button>
           </div>
         </div>
 
-        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 bg-gray-900/80 backdrop-blur-sm border border-white/10 px-3 py-1 rounded-full shadow-lg">
-          <p className="text-[10px] text-gray-400 uppercase tracking-widest font-semibold flex items-center gap-1">
+        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 bg-zinc-900/80 backdrop-blur-sm border border-zinc-800/50 px-3 py-1 rounded-full shadow-lg">
+          <p className="text-[10px] text-zinc-400 uppercase tracking-widest font-semibold flex items-center gap-1">
           </p>
         </div>
       </div>
@@ -680,59 +680,59 @@ const SimulatorPage = () => {
     return (
       <div className="space-y-4 h-full overflow-y-auto pr-2">
         <div className="mb-4">
-          <h2 className="text-xl font-semibold text-white">Métricas de Rendimiento</h2>
-          <p className="text-sm text-gray-400">Resumen de la actividad del bot</p>
+          <h2 className="text-xl font-semibold text-white tracking-tight">Métricas de Rendimiento</h2>
+          <p className="text-sm text-zinc-400">Resumen de la actividad del bot</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="bg-gray-900/50 border border-white/5 rounded-xl p-5">
+          <div className="bg-zinc-900/50 border border-zinc-800/80 rounded-xl p-5 hover:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] transition-shadow">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-full bg-sky-500/20 flex items-center justify-center shrink-0">
                 <Users className="w-6 h-6 text-sky-400" />
               </div>
               <div>
-                <p className="text-sm text-gray-400">Total Clientes</p>
-                <h3 className="text-2xl font-bold text-white">24</h3>
+                <p className="text-sm text-zinc-400">Total Clientes</p>
+                <h3 className="text-2xl font-bold text-white tracking-tight">24</h3>
               </div>
             </div>
           </div>
           
-          <div className="bg-gray-900/50 border border-white/5 rounded-xl p-5">
+          <div className="bg-zinc-900/50 border border-zinc-800/80 rounded-xl p-5 hover:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] transition-shadow">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center shrink-0">
                 <Bot className="w-6 h-6 text-emerald-400" />
               </div>
               <div>
-                <p className="text-sm text-gray-400">Mensajes del Bot</p>
-                <h3 className="text-2xl font-bold text-white">1,847</h3>
+                <p className="text-sm text-zinc-400">Mensajes del Bot</p>
+                <h3 className="text-2xl font-bold text-white tracking-tight">1,847</h3>
               </div>
             </div>
           </div>
           
-          <div className="bg-gray-900/50 border border-white/5 rounded-xl p-5">
+          <div className="bg-zinc-900/50 border border-zinc-800/80 rounded-xl p-5 hover:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] transition-shadow">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center shrink-0">
                 <MessageCircle className="w-6 h-6 text-purple-400" />
               </div>
               <div>
-                <p className="text-sm text-gray-400">Tiempo Ahorrado (Aprox)</p>
-                <h3 className="text-2xl font-bold text-white">61 horas</h3>
+                <p className="text-sm text-zinc-400">Tiempo Ahorrado (Aprox)</p>
+                <h3 className="text-2xl font-bold text-white tracking-tight">61 horas</h3>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="bg-gray-900/50 border border-white/5 rounded-xl p-6 mt-4">
+        <div className="bg-zinc-900/50 border border-zinc-800/80 rounded-xl p-6 mt-4">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
-            <h3 className="text-lg font-medium text-white">Actividad de los últimos 7 días</h3>
+            <h3 className="text-lg font-medium text-white tracking-tight">Actividad de los últimos 7 días</h3>
             <div className="flex items-center gap-4 text-xs">
               <div className="flex items-center gap-1.5">
                 <span className="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
-                <span className="text-gray-400">Mensajes Recibidos</span>
+                <span className="text-zinc-400">Mensajes Recibidos</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
-                <span className="text-gray-400">Respuestas del Bot</span>
+                <span className="text-zinc-400">Respuestas del Bot</span>
               </div>
             </div>
           </div>
@@ -743,18 +743,18 @@ const SimulatorPage = () => {
                 <div className="flex items-end gap-1 h-48">
                   {/* Received bar */}
                   <div className="w-4 sm:w-6 bg-indigo-500/80 hover:bg-indigo-400 rounded-t-sm transition-colors relative group" style={{ height: `${(d.received / maxVal) * 100}%` }}>
-                    <div className="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-800 text-xs px-2 py-1 rounded text-white whitespace-nowrap transition-opacity pointer-events-none z-10">
+                    <div className="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-zinc-800 text-xs px-2 py-1 rounded text-white whitespace-nowrap transition-opacity pointer-events-none z-10">
                       {d.received}
                     </div>
                   </div>
                   {/* Bot bar */}
                   <div className="w-4 sm:w-6 bg-emerald-500/80 hover:bg-emerald-400 rounded-t-sm transition-colors relative group" style={{ height: `${(d.bot / maxVal) * 100}%` }}>
-                    <div className="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-800 text-xs px-2 py-1 rounded text-white whitespace-nowrap transition-opacity pointer-events-none z-10">
+                    <div className="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-zinc-800 text-xs px-2 py-1 rounded text-white whitespace-nowrap transition-opacity pointer-events-none z-10">
                       {d.bot}
                     </div>
                   </div>
                 </div>
-                <span className="text-xs sm:text-sm text-gray-500">{d.day}</span>
+                <span className="text-xs sm:text-sm text-zinc-500">{d.day}</span>
               </div>
             ))}
           </div>
@@ -767,10 +767,10 @@ const SimulatorPage = () => {
     <div className="h-full overflow-y-auto pr-2">
       <div className="flex justify-between items-center mb-4">
         <div>
-          <h2 className="text-xl font-semibold text-white">Base de Conocimiento</h2>
-          <p className="text-sm text-gray-400">Información que el bot usa para responder</p>
+          <h2 className="text-xl font-semibold text-white tracking-tight">Base de Conocimiento</h2>
+          <p className="text-sm text-zinc-400">Información que el bot usa para responder</p>
         </div>
-        <button disabled className="flex items-center gap-2 bg-sky-600/30 text-sky-400/60 border border-sky-500/20 px-4 py-2 rounded-lg text-sm cursor-not-allowed">
+        <button disabled className="flex items-center gap-2 bg-zinc-800/50 text-zinc-500 border border-zinc-800 px-4 py-2 rounded-lg text-sm cursor-not-allowed">
           <Plus className="w-4 h-4" />
           Nuevo
         </button>
@@ -786,25 +786,22 @@ const SimulatorPage = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {[
-          { title: 'Catálogo de Productos', badge: 'Catálogo', desc: 'Camisetas Oversize "Urban Drop" desde $25 USD. Pantalones Cargo "Street" a $45 USD. Hoodies "Minimal" a $55 USD. 100% algodón orgánico.' },
-          { title: 'Política de Envíos', badge: 'Logística', desc: 'Envíos a toda Argentina. Estándar $5 USD (3-5 días). Express $10 USD (24hs). Gratis en compras +$50 USD. Vía FedEx y DHL.' },
-          { title: 'Métodos de Pago y Cambios', badge: 'Pagos', desc: 'Aceptamos Visa, Mastercard, Amex, PayPal y transferencias. Cambios hasta 30 días con etiquetas y sin uso.' },
-          { title: '¿Cuál es la dirección del centro comercial donde tienen sucursal en BA?', badge: 'Auto-aprendido ✨', desc: 'La sucursal del Abasto está ubicada en Urquiza 152, Av. Ecuador, Buenos Aires.' }
+          { title: 'Catálogo de Productos', badge: 'catálogo', desc: 'Camisetas Oversize "Urban Drop" desde $25 USD. Pantalones Cargo "Street" a $45 USD. Hoodies "Minimal" a $55 USD. 100% algodón orgánico.' },
+          { title: 'Política de Envíos', badge: 'logística', desc: 'Envíos a toda Argentina. Estándar $5 USD (3-5 días). Express $10 USD (24hs). Gratis en compras +$50 USD. Vía FedEx y DHL.' },
+          { title: 'Métodos de Pago y Cambios', badge: 'pagos', desc: 'Aceptamos Visa, Mastercard, Amex, PayPal y transferencias. Cambios hasta 30 días con etiquetas y sin uso.' },
+          { title: '¿Cuál es la dirección del centro comercial donde tienen sucursal en BA?', badge: 'auto-aprendido', desc: 'La sucursal del Abasto está ubicada en Urquiza 152, Av. Ecuador, Buenos Aires.' }
         ].map((item, i) => (
-          <div key={i} className={`border rounded-xl p-5 transition-colors ${
+          <div key={i} className={`border rounded-xl p-5 transition-all hover:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] hover:-translate-y-0.5 cursor-default ${
             i === 3 
               ? 'bg-emerald-900/10 border-emerald-500/20 hover:bg-emerald-900/20' 
-              : 'bg-gray-900/40 border-white/5 hover:bg-gray-900/60'
+              : 'bg-zinc-900/50 border-zinc-800/80 hover:bg-zinc-800/50'
           }`}>
-            <div className="flex justify-between items-start mb-3">
-              <h3 className="font-medium text-white text-sm leading-snug pr-2">{item.title}</h3>
-              <span className={`text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full shrink-0 ${
-                i === 3 ? 'bg-emerald-500/20 text-emerald-300' : 'bg-gray-800 text-gray-300'
-              }`}>
-                {item.badge}
-              </span>
+            <div className="font-mono text-[13px] mb-3 tracking-tight transition-colors flex items-center gap-1">
+              <span className={i === 3 ? 'text-emerald-400' : 'text-zinc-500'}>[{item.badge}]</span>
+              {i === 3 && <Sparkles className="w-3 h-3 text-emerald-400 inline" />}
             </div>
-            <p className="text-sm text-gray-400 line-clamp-3">{item.desc}</p>
+            <h3 className="font-bold text-white text-lg mb-2 tracking-tight">{item.title}</h3>
+            <p className="text-[14px] text-zinc-400 line-clamp-3 leading-relaxed">{item.desc}</p>
           </div>
         ))}
       </div>
@@ -820,35 +817,35 @@ const SimulatorPage = () => {
 
       <div className="space-y-4">
         <div>
-          <label className="block text-sm font-medium text-gray-300 mb-1">System Prompt</label>
+          <label className="block text-sm font-medium text-zinc-300 mb-1">System Prompt</label>
           <textarea 
             disabled
             rows={5}
-            className="w-full bg-gray-900/50 border border-white/10 rounded-lg p-3 text-sm text-gray-400 focus:outline-none resize-none cursor-not-allowed"
+            className="w-full bg-zinc-900/50 border border-zinc-800 rounded-lg p-3 text-sm text-zinc-400 focus:outline-none resize-none cursor-not-allowed"
             value="Eres un asistente virtual amable y profesional para una tienda de ropa. Tu objetivo es ayudar a los clientes con información sobre polos oversize, tallas, colores y precios. Siempre responde en español."
           />
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-300 mb-1">Modelo AI</label>
-            <select disabled className="w-full bg-gray-900/50 border border-white/10 rounded-lg p-2.5 text-sm text-gray-400 cursor-not-allowed appearance-none">
+            <label className="block text-sm font-medium text-zinc-300 mb-1">Modelo AI</label>
+            <select disabled className="w-full bg-zinc-900/50 border border-zinc-800 rounded-lg p-2.5 text-sm text-zinc-400 cursor-not-allowed appearance-none">
               <option>openai/gpt-oss-20b (Groq)</option>
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-300 mb-1">Temperatura</label>
-            <input type="text" disabled value="0.7" className="w-full bg-gray-900/50 border border-white/10 rounded-lg p-2.5 text-sm text-gray-400 cursor-not-allowed" />
+            <label className="block text-sm font-medium text-zinc-300 mb-1">Temperatura</label>
+            <input type="text" disabled value="0.7" className="w-full bg-zinc-900/50 border border-zinc-800 rounded-lg p-2.5 text-sm text-zinc-400 cursor-not-allowed" />
           </div>
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-300 mb-1">Token de Meta</label>
-          <input type="password" disabled value="EAAGm0PX4ZCQoBO..." className="w-full bg-gray-900/50 border border-white/10 rounded-lg p-2.5 text-sm text-gray-400 cursor-not-allowed font-mono" />
+          <label className="block text-sm font-medium text-zinc-300 mb-1">Token de Meta</label>
+          <input type="password" disabled value="EAAGm0PX4ZCQoBO..." className="w-full bg-zinc-900/50 border border-zinc-800 rounded-lg p-2.5 text-sm text-zinc-400 cursor-not-allowed font-mono" />
         </div>
 
-        <div className="pt-4 border-t border-white/5 flex justify-end">
-          <button disabled className="bg-sky-600/50 text-white/50 px-6 py-2.5 rounded-lg text-sm font-medium cursor-not-allowed">
+        <div className="pt-4 border-t border-zinc-800/80 flex justify-end">
+          <button disabled className="bg-zinc-800 text-zinc-500 px-6 py-2.5 rounded-lg text-sm font-medium cursor-not-allowed">
             Guardar Cambios
           </button>
         </div>
@@ -857,15 +854,12 @@ const SimulatorPage = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gray-950 text-gray-100 relative overflow-hidden font-sans">
-      {/* Background gradients */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-sky-600/10 rounded-full blur-[120px]"></div>
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-600/10 rounded-full blur-[120px]"></div>
-      </div>
+    <div className="min-h-screen bg-[#0a0a0a] text-zinc-100 relative overflow-hidden font-sans selection:bg-sky-500/30">
+      {/* Background grids */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '24px 24px' }}></div>
 
       {/* Floating CTA */}
-      <Link to='/login' className='fixed bottom-6 right-6 z-50 bg-gradient-to-r from-sky-500 to-blue-600 text-white px-6 py-3 rounded-full font-medium shadow-xl shadow-sky-500/25 hover:-translate-y-1 transition-transform flex items-center gap-2 text-sm'>
+      <Link to='/login' className='fixed bottom-6 right-6 z-50 bg-white text-black px-6 py-3 rounded-full font-bold shadow-xl hover:-translate-y-1 transition-transform flex items-center gap-2 text-sm'>
         <Zap className='w-4 h-4' /> Crear cuenta gratis
       </Link>
 
@@ -874,16 +868,16 @@ const SimulatorPage = () => {
         {/* Header Area */}
         <div className="flex flex-col items-center justify-center gap-6 mb-8">
           <div className="w-full relative flex items-center justify-center">
-            <Link to="/" className="absolute left-0 inline-flex items-center gap-2 text-sky-400 hover:text-sky-300 transition-colors text-sm font-medium">
+            <Link to="/" className="absolute left-0 inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors text-sm font-medium">
               <ArrowLeft className="w-4 h-4" /> <span className="hidden sm:inline">Volver</span>
             </Link>
-            <h1 className="text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 tracking-tight text-center">
+            <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-white text-center">
               Experiencia Demo
             </h1>
           </div>
 
           {/* Tab Navigation */}
-          <div className="flex gap-1 bg-gray-900/60 p-1.5 rounded-full border border-white/5 backdrop-blur-sm overflow-x-auto w-full md:w-auto items-center justify-start md:justify-center [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+          <div className="flex gap-1 bg-zinc-900/50 p-1.5 rounded-full border border-zinc-800/50 backdrop-blur-sm overflow-x-auto w-full md:w-auto items-center justify-start md:justify-center [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             {[
               { id: 'chat', label: 'Chat Bot', icon: MessageSquare },
               { id: 'conversaciones', label: 'Conversaciones', icon: Users },
@@ -899,11 +893,11 @@ const SimulatorPage = () => {
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex items-center gap-2 px-5 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${
                     isActive 
-                      ? 'bg-gray-800 text-white shadow-sm border border-white/10' 
-                      : 'text-gray-400 hover:text-gray-200 hover:bg-gray-800/50'
+                      ? 'bg-white text-black shadow-sm' 
+                      : 'text-zinc-400 hover:text-white hover:bg-zinc-800/50'
                   }`}
                 >
-                  <Icon className={`w-4 h-4 ${isActive ? 'text-sky-400' : ''}`} />
+                  <Icon className={`w-4 h-4`} />
                   {tab.label}
                 </button>
               );
@@ -912,7 +906,7 @@ const SimulatorPage = () => {
         </div>
 
         {/* Main Content Area - Glass Card */}
-        <div className="bg-gray-900/60 backdrop-blur-xl border border-white/10 rounded-2xl p-6 md:p-8 shadow-2xl flex-1 flex flex-col min-h-0 overflow-hidden">
+        <div className="bg-zinc-950/50 backdrop-blur-xl border border-zinc-800/80 rounded-2xl p-6 md:p-8 shadow-2xl flex-1 flex flex-col min-h-0 overflow-hidden">
           {activeTab === 'chat' && renderChatBot()}
           {activeTab === 'conversaciones' && renderConversaciones()}
           {activeTab === 'metricas' && renderMetricas()}
