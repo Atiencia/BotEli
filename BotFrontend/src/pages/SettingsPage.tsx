@@ -85,7 +85,7 @@ export default function SettingsPage() {
         <button
           onClick={handleSave}
           disabled={saving}
-          className="w-full md:w-auto flex items-center justify-center space-x-2 bg-zinc-900 dark:bg-white hover:bg-zinc-800 dark:hover:bg-zinc-200 text-white dark:text-black px-6 py-2.5 rounded-lg transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed text-sm shadow-sm"
+          className="w-full md:w-auto flex items-center justify-center space-x-2 bg-zinc-900 dark:bg-white hover:bg-zinc-800 dark:hover:bg-zinc-200 text-white dark:text-black px-6 py-2.5 rounded-full transition-colors font-bold disabled:opacity-50 disabled:cursor-not-allowed text-sm shadow-sm"
         >
           {saving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
           <span>{saving ? 'Guardando...' : 'Guardar Cambios'}</span>
@@ -111,10 +111,10 @@ export default function SettingsPage() {
       <div className="space-y-8">
         
         {/* Core Bot Setup */}
-        <section className="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-900 rounded-xl overflow-hidden shadow-sm">
-          <div className="p-6 md:p-8 border-b border-zinc-200 dark:border-zinc-900 flex flex-col md:flex-row md:items-center justify-between gap-6 bg-zinc-50/50 dark:bg-transparent">
+        <section className="bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 rounded-2xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)]">
+          <div className="p-6 md:p-8 border-b border-zinc-200/80 dark:border-zinc-800 flex flex-col md:flex-row md:items-center justify-between gap-6 bg-transparent">
             <div className="flex items-center space-x-4">
-              <div className="w-10 h-10 rounded-lg bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center text-zinc-600 dark:text-zinc-300 shrink-0 shadow-sm">
+              <div className="w-10 h-10 bg-[#111111] dark:bg-white rounded-xl flex items-center justify-center text-white dark:text-black shrink-0 shadow-sm">
                 <Bot className="w-5 h-5" />
               </div>
               <div>

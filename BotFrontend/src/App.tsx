@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation, Outlet, useNavigate } from 'react-router-dom';
-import { MessageSquare, BookOpen, Settings, Bot, LogOut, Activity, Menu, X } from 'lucide-react';
+import { MessageSquare, BookOpen, Settings,LogOut, Activity, Menu, X } from 'lucide-react';
 import LandingPage from './pages/LandingPage';
 import KnowledgePage from './pages/KnowledgePage';
 import ChatsPage from './pages/ChatsPage';
@@ -44,17 +44,18 @@ function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen: (val: bool
         />
       )}
       
-      <aside className={`fixed md:relative w-64 h-screen border-r border-zinc-200 dark:border-zinc-800 bg-white/95 dark:bg-zinc-950/50 backdrop-blur-xl flex flex-col z-30 transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}`}>
-        <div className="p-6 flex items-center justify-between border-b border-zinc-200 dark:border-zinc-800">
-          <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500 to-blue-600 flex items-center justify-center shadow-lg shadow-sky-500/20">
-              <Bot className="w-6 h-6 text-white" />
-            </div>
-            <div>
-              <h1 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-blue-400">
-                Eli
-              </h1>
-            </div>
+      <aside className={`fixed md:relative w-64 h-screen border-r border-zinc-200/80 dark:border-zinc-800/80 bg-white/80 dark:bg-[#0a0a0a]/80 backdrop-blur-md flex flex-col z-30 transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}`}>
+        <div className="p-6 flex items-center justify-between border-b border-zinc-200/80 dark:border-zinc-800/80">
+          <Link to="/" className="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="w-8 h-8">
+              <path d="M55 35 V20 H40" stroke="currentColor" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" fill="none" className="text-zinc-900 dark:text-white" />
+              <line x1="10" y1="55" x2="18" y2="55" stroke="currentColor" strokeWidth="8" strokeLinecap="round" className="text-zinc-900 dark:text-white" />
+              <line x1="82" y1="55" x2="90" y2="55" stroke="currentColor" strokeWidth="8" strokeLinecap="round" className="text-zinc-900 dark:text-white" />
+              <rect x="18" y="35" width="64" height="40" rx="12" stroke="currentColor" strokeWidth="8" fill="none" className="text-zinc-900 dark:text-white" />
+              <rect x="34" y="48" width="10" height="18" rx="5" className="fill-sky-500" />
+              <rect x="56" y="48" width="10" height="18" rx="5" className="fill-sky-500" />
+            </svg>
+            <span className="text-xl font-bold text-zinc-900 dark:text-white tracking-tight">BotEli</span>
           </Link>
           <div className="flex items-center gap-2">
             <NotificationCenter />
@@ -72,30 +73,30 @@ function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen: (val: bool
                 key={item.path}
                 to={item.path}
                 onClick={() => setIsOpen(false)}
-                className={`flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-300 ease-in-out border ${
+                className={`flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-300 ease-in-out ${
                   isActive 
-                    ? 'bg-sky-50 dark:bg-sky-500/10 text-sky-600 dark:text-sky-400 border-sky-200 dark:border-sky-500/20 shadow-sm' 
-                    : 'border-transparent text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800/50 hover:text-zinc-900 dark:hover:text-zinc-200'
+                    ? 'bg-zinc-100 dark:bg-zinc-900 text-zinc-900 dark:text-white shadow-sm font-semibold' 
+                    : 'text-zinc-500 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 hover:text-zinc-900 dark:hover:text-white'
                 }`}
               >
-                <div className={`${isActive ? 'text-sky-600 dark:text-sky-400' : ''}`}>
+                <div className={`${isActive ? 'text-sky-500' : ''}`}>
                   {item.icon}
                 </div>
-                <span className="font-medium">{item.label}</span>
+                <span>{item.label}</span>
               </Link>
             );
           })}
         </nav>
         
-        <div className="p-4 border-t border-zinc-200 dark:border-zinc-800 space-y-4">
-          <div className="px-4 py-2 bg-zinc-50 dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-800">
+        <div className="p-4 border-t border-zinc-200/80 dark:border-zinc-800/80 space-y-4">
+          <div className="px-4 py-2 bg-zinc-50 dark:bg-zinc-900/50 rounded-lg border border-zinc-200/50 dark:border-zinc-800/50">
             <p className="text-xs text-zinc-500 mb-1">Sesión iniciada como</p>
-            <p className="text-sm font-medium text-zinc-700 dark:text-zinc-300 truncate">{user?.email}</p>
+            <p className="text-sm font-medium text-zinc-900 dark:text-zinc-100 truncate">{user?.email}</p>
           </div>
           
           <button
             onClick={handleLogout}
-            className="w-full flex items-center justify-center space-x-2 px-4 py-2 text-sm text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-500/10 hover:text-red-700 dark:hover:text-red-300 rounded-lg transition-colors border border-transparent hover:border-red-200 dark:hover:border-red-500/20"
+            className="w-full flex items-center justify-center space-x-2 px-4 py-2.5 text-sm text-zinc-600 dark:text-zinc-400 hover:bg-red-50 dark:hover:bg-red-500/10 hover:text-red-600 dark:hover:text-red-400 rounded-lg transition-colors border border-transparent hover:border-red-200 dark:hover:border-red-500/20 font-medium"
           >
             <LogOut className="w-4 h-4" />
             <span>Cerrar Sesión</span>
@@ -110,21 +111,25 @@ function DashboardLayout() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
-    <div className="flex h-screen bg-transparent overflow-hidden relative transition-colors duration-300">
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-sky-400/10 dark:bg-sky-600/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-400/10 dark:bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
+    <div className="flex h-screen bg-[#F2F2F2] dark:bg-[#0a0a0a] overflow-hidden relative transition-colors duration-300 selection:bg-sky-500/30 selection:text-white">
+
       
       <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
       
       <main className="flex-1 h-screen overflow-hidden flex flex-col z-10 relative">
-        <div className="md:hidden flex items-center justify-between p-4 border-b border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md">
-          <Link to="/" className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-sky-500 to-blue-600 flex items-center justify-center">
-              <Bot className="w-4 h-4 text-white" />
-            </div>
-            <span className="font-bold text-zinc-900 dark:text-white">Eli Panel</span>
+        <div className="md:hidden flex items-center justify-between p-4 border-b border-zinc-200/80 dark:border-zinc-800/80 bg-white/80 dark:bg-[#0a0a0a]/80 backdrop-blur-md">
+          <Link to="/" className="flex items-center gap-2.5">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="w-6 h-6">
+              <path d="M55 35 V20 H40" stroke="currentColor" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" fill="none" className="text-zinc-900 dark:text-white" />
+              <line x1="10" y1="55" x2="18" y2="55" stroke="currentColor" strokeWidth="8" strokeLinecap="round" className="text-zinc-900 dark:text-white" />
+              <line x1="82" y1="55" x2="90" y2="55" stroke="currentColor" strokeWidth="8" strokeLinecap="round" className="text-zinc-900 dark:text-white" />
+              <rect x="18" y="35" width="64" height="40" rx="12" stroke="currentColor" strokeWidth="8" fill="none" className="text-zinc-900 dark:text-white" />
+              <rect x="34" y="48" width="10" height="18" rx="5" className="fill-sky-500" />
+              <rect x="56" y="48" width="10" height="18" rx="5" className="fill-sky-500" />
+            </svg>
+            <span className="font-bold text-zinc-900 dark:text-white tracking-tight">Eli Panel</span>
           </Link>
-          <button onClick={() => setIsSidebarOpen(true)} className="p-2 text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white bg-zinc-100 dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-800">
+          <button onClick={() => setIsSidebarOpen(true)} className="p-2 text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white bg-zinc-100 dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-800 transition-colors">
             <Menu className="w-5 h-5" />
           </button>
         </div>

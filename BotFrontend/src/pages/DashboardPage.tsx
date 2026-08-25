@@ -55,11 +55,11 @@ export default function DashboardPage() {
         animate="show"
         className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10"
       >
-        <motion.div variants={itemVariants} className="bg-white dark:bg-zinc-900/50 p-8 rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-sm transition-colors hover:border-zinc-300 dark:hover:border-zinc-700">
+        <motion.div variants={itemVariants} className="bg-white dark:bg-zinc-900 p-8 rounded-2xl border border-zinc-200/80 dark:border-zinc-800 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_12px_40px_-4px_rgba(0,0,0,0.1)] transition-all hover:-translate-y-1 group">
           <div className="flex items-center justify-between mb-4">
             <p className="text-sm font-semibold text-zinc-500 dark:text-zinc-400 tracking-wide uppercase">Clientes</p>
-            <div className="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center">
-              <Users className="w-5 h-5 text-zinc-700 dark:text-zinc-300" />
+            <div className="w-10 h-10 bg-[#111111] dark:bg-white rounded-xl flex items-center justify-center text-white dark:text-black group-hover:bg-sky-500 group-hover:text-white transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-sm">
+              <Users className="w-5 h-5" />
             </div>
           </div>
           <div>
@@ -67,11 +67,11 @@ export default function DashboardPage() {
           </div>
         </motion.div>
         
-        <motion.div variants={itemVariants} className="bg-white dark:bg-zinc-900/50 p-8 rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-sm transition-colors hover:border-zinc-300 dark:hover:border-zinc-700">
+        <motion.div variants={itemVariants} className="bg-white dark:bg-zinc-900 p-8 rounded-2xl border border-zinc-200/80 dark:border-zinc-800 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_12px_40px_-4px_rgba(0,0,0,0.1)] transition-all hover:-translate-y-1 group">
           <div className="flex items-center justify-between mb-4">
             <p className="text-sm font-semibold text-zinc-500 dark:text-zinc-400 tracking-wide uppercase">Mensajes IA</p>
-            <div className="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center">
-              <Bot className="w-5 h-5 text-zinc-700 dark:text-zinc-300" />
+            <div className="w-10 h-10 bg-[#111111] dark:bg-white rounded-xl flex items-center justify-center text-white dark:text-black group-hover:bg-sky-500 group-hover:text-white transition-all duration-300 group-hover:scale-110 group-hover:-rotate-6 shadow-sm">
+              <Bot className="w-5 h-5" />
             </div>
           </div>
           <div>
@@ -79,11 +79,11 @@ export default function DashboardPage() {
           </div>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="bg-white dark:bg-zinc-900/50 p-8 rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-sm transition-colors hover:border-zinc-300 dark:hover:border-zinc-700">
+        <motion.div variants={itemVariants} className="bg-white dark:bg-zinc-900 p-8 rounded-2xl border border-zinc-200/80 dark:border-zinc-800 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_12px_40px_-4px_rgba(0,0,0,0.1)] transition-all hover:-translate-y-1 group">
           <div className="flex items-center justify-between mb-4">
             <p className="text-sm font-semibold text-zinc-500 dark:text-zinc-400 tracking-wide uppercase">Horas Ahorradas</p>
-            <div className="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center">
-              <MessageCircle className="w-5 h-5 text-zinc-700 dark:text-zinc-300" />
+            <div className="w-10 h-10 bg-[#111111] dark:bg-white rounded-xl flex items-center justify-center text-white dark:text-black group-hover:bg-sky-500 group-hover:text-white transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-sm">
+              <MessageCircle className="w-5 h-5" />
             </div>
           </div>
           <div>
@@ -98,7 +98,7 @@ export default function DashboardPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
-        className="bg-white dark:bg-zinc-900/50 rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-sm p-8 flex flex-col"
+        className="bg-white dark:bg-zinc-900 rounded-2xl border border-zinc-200/80 dark:border-zinc-800 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] p-8 flex flex-col"
       >
         <h3 className="text-lg font-semibold text-zinc-900 dark:text-white tracking-tight mb-8">Actividad de los últimos 7 días</h3>
         <div className="w-full h-[400px]">

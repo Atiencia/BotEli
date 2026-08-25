@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { Plus, Pencil, Trash2, Save, X, Loader2 } from 'lucide-react';
 import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
@@ -84,50 +84,50 @@ export default function KnowledgePage() {
   };
 
   return (
-    <div className="p-4 md:p-8 max-w-6xl mx-auto pb-24 md:pb-8">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+    <div className="p-6 md:p-10 max-w-6xl mx-auto pb-24 md:pb-8 font-sans selection:bg-sky-500/30 selection:text-white bg-transparent">
+      <header className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-10 border-b border-zinc-200 dark:border-zinc-900 pb-8">
         <div>
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Base de Conocimiento</h2>
-          <p className="text-gray-400 text-sm md:text-base">Administra la información que Eli utilizará para responder.</p>
+          <h2 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-white mb-2">Base de Conocimiento</h2>
+          <p className="text-zinc-500 dark:text-zinc-400 text-sm md:text-base">Administra la información que Eli utilizará para responder.</p>
         </div>
         <button
           onClick={() => openModal()}
-          className="w-full md:w-auto flex items-center justify-center space-x-2 bg-sky-600 hover:bg-sky-700 text-white px-5 py-2.5 rounded-xl transition-all duration-300 shadow-lg shadow-sky-600/30"
+          className="w-full md:w-auto flex items-center justify-center space-x-2 bg-zinc-900 dark:bg-white hover:bg-zinc-800 dark:hover:bg-zinc-200 text-white dark:text-black px-6 py-2.5 rounded-full transition-colors font-bold shadow-sm text-sm"
         >
-          <Plus className="w-5 h-5" />
+          <Plus className="w-4 h-4" />
           <span>Agregar Conocimiento</span>
         </button>
-      </div>
+      </header>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {isLoading ? (
-          <div className="col-span-full flex flex-col items-center justify-center py-20 text-gray-400">
+          <div className="col-span-full flex flex-col items-center justify-center py-20 text-zinc-400">
             <Loader2 className="w-8 h-8 animate-spin text-sky-500" />
           </div>
         ) : items.length === 0 ? (
-          <div className="col-span-full text-center py-20 text-gray-500 glass rounded-2xl border-dashed">
+          <div className="col-span-full text-center py-20 text-zinc-500 bg-white dark:bg-zinc-900 rounded-2xl border border-dashed border-zinc-300 dark:border-zinc-800 text-sm font-medium">
             No hay información en la base de conocimiento. Agrega algo para que Eli pueda aprender.
           </div>
         ) : (
           items.map((item) => (
-            <div key={item.id} className="glass rounded-2xl p-6 transition-all duration-300 hover:border-gray-600 hover:-translate-y-1">
+            <div key={item.id} className="bg-white dark:bg-zinc-900 rounded-2xl p-6 border border-zinc-200/80 dark:border-zinc-800 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] transition-all duration-300 hover:shadow-[0_12px_40px_-4px_rgba(0,0,0,0.1)] hover:-translate-y-1 group">
               <div className="flex justify-between items-start mb-4">
-                <span className="inline-block px-3 py-1 bg-sky-500/20 text-sky-300 rounded-full text-xs font-medium border border-sky-500/30">
+                <span className="inline-block px-3 py-1 bg-zinc-100 dark:bg-black text-zinc-600 dark:text-zinc-300 rounded-full text-[11px] font-bold border border-zinc-200 dark:border-zinc-800 tracking-wider uppercase">
                   {item.category}
                 </span>
                 <div className="flex space-x-2">
-                  <button onClick={() => openModal(item)} className="text-gray-400 hover:text-sky-400 transition-colors">
+                  <button onClick={() => openModal(item)} className="text-zinc-400 hover:text-sky-500 transition-colors">
                     <Pencil className="w-4 h-4" />
                   </button>
-                  <button onClick={() => handleDeleteClick(item.id)} className="text-gray-400 hover:text-red-400 transition-colors">
+                  <button onClick={() => handleDeleteClick(item.id)} className="text-zinc-400 hover:text-red-500 transition-colors">
                     <Trash2 className="w-4 h-4" />
                   </button>
                 </div>
               </div>
-              <p className="text-gray-300 text-sm whitespace-pre-wrap line-clamp-6">
+              <p className="text-zinc-600 dark:text-zinc-400 text-[15px] whitespace-pre-wrap line-clamp-6 leading-relaxed">
                 {item.content}
               </p>
-              <div className="mt-4 pt-4 border-t border-gray-800 text-xs text-gray-500">
+              <div className="mt-4 pt-4 border-t border-zinc-200/80 dark:border-zinc-800/80 text-xs text-zinc-400 font-mono tracking-tight">
                 Creado: {new Date(item.created_at).toLocaleDateString()}
               </div>
             </div>
