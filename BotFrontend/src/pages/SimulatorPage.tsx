@@ -320,7 +320,7 @@ const SimulatorPage = () => {
             <h2 className="text-zinc-900 dark:text-white text-xl font-semibold mt-1">StyleAura Oficial</h2>
             <p className="text-zinc-500 text-[14px]">styleaura_oficial • Instagram</p>
             <p className="text-zinc-500 text-[14px]">24 mil seguidores • 150 publicaciones</p>
-            <button className="bg-zinc-800 text-zinc-900 dark:text-white text-[14px] font-semibold px-4 py-1.5 rounded-lg mt-2 hover:bg-zinc-700 transition-colors">Ver perfil</button>
+            <button className="bg-zinc-800 text-white text-[14px] font-semibold px-4 py-1.5 rounded-lg mt-2 hover:bg-zinc-700 transition-colors">Ver perfil</button>
           </div>
           
           <div className="text-center text-zinc-600 text-[12px] my-4 font-medium">Hoy 2:30 p.m.</div>
@@ -359,7 +359,7 @@ const SimulatorPage = () => {
         </div>
 
         {/* IG Direct Input Area / Handoff Banner */}
-        <div className="px-3 py-3 bg-black border-t border-zinc-900 pb-8 shrink-0 relative">
+        <div className="px-3 py-3 bg-white dark:bg-black border-t border-zinc-200 dark:border-zinc-900 pb-8 shrink-0 relative">
           
           {showReactivated && (
             <div className="absolute -top-10 left-1/2 -translate-x-1/2 bg-green-500/90 text-zinc-900 dark:text-white text-xs font-semibold px-4 py-1.5 rounded-full shadow-lg flex items-center gap-1.5 animate-fade-in-up z-20">
@@ -393,7 +393,7 @@ const SimulatorPage = () => {
               </button>
               <div className="flex-1 relative flex items-center">
                 {isRecording ? (
-                  <div className="w-full bg-zinc-900 rounded-full py-2.5 pl-4 pr-12 flex items-center justify-between overflow-hidden">
+                  <div className="w-full bg-zinc-100 dark:bg-zinc-900 rounded-full py-2.5 pl-4 pr-12 flex items-center justify-between overflow-hidden">
                     <div className="flex items-center gap-2">
                       <div className="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></div>
                       <span className="text-zinc-900 dark:text-white text-[15px] font-medium">
@@ -418,7 +418,7 @@ const SimulatorPage = () => {
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     placeholder="Mensaje..."
-                    className="w-full bg-zinc-900 rounded-full py-2.5 pl-4 pr-10 text-[15px] text-zinc-900 dark:text-white placeholder-zinc-500 focus:outline-none"
+                    className="w-full bg-zinc-100 dark:bg-zinc-900 rounded-full py-2.5 pl-4 pr-10 text-[15px] text-zinc-900 dark:text-white placeholder-zinc-500 focus:outline-none"
                     disabled={isLoading}
                   />
                 )}
@@ -463,7 +463,7 @@ const SimulatorPage = () => {
   const renderConversaciones = () => (
     <div className="flex h-full border border-zinc-200 dark:border-zinc-800/80 rounded-xl overflow-hidden bg-white dark:bg-[#0a0a0a]">
       {/* Sidebar */}
-      <div className="w-1/3 border-r border-zinc-200 dark:border-zinc-800/80 bg-zinc-900/30 flex flex-col hidden md:flex">
+      <div className="w-1/3 border-r border-zinc-200 dark:border-zinc-800/80 bg-white dark:bg-zinc-900/50 flex flex-col hidden md:flex">
         <div className="p-4 border-b border-zinc-200 dark:border-zinc-800/80">
           <div className="relative">
             <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500" />
@@ -477,7 +477,7 @@ const SimulatorPage = () => {
         </div>
         <div className="flex-1 overflow-y-auto">
           {/* Active User */}
-          <div className="p-3 border-b border-zinc-200 dark:border-zinc-800/50 bg-sky-900/20 cursor-pointer flex items-center gap-3 relative">
+          <div className="p-3 border-b border-zinc-200 dark:border-zinc-800/50 bg-zinc-50 dark:bg-zinc-800/50 cursor-pointer flex items-center gap-3 relative">
             <div className="w-10 h-10 rounded-full bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center shrink-0 relative">
               <User className="w-5 h-5 text-zinc-500 dark:text-zinc-400" />
               <Instagram className="w-4 h-4 absolute -bottom-1 -right-1 bg-white dark:bg-zinc-900 rounded-full shadow-[0_0_0_2px_#ffffff] dark:shadow-[0_0_0_2px_#18181b]" />
@@ -570,10 +570,10 @@ const SimulatorPage = () => {
           </button>
         </div>
 
-        <div className="flex-1 overflow-y-auto p-4 space-y-6 bg-black/40">
+        <div className="flex-1 overflow-y-auto p-4 space-y-6">
           {/* Msg 1 */}
           <div className="flex gap-3 justify-start">
-            <div className="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center shrink-0 mt-4">
+            <div className="w-8 h-8 rounded-full bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center shrink-0 mt-4">
               <User className="w-4 h-4 text-zinc-500 dark:text-zinc-400" />
             </div>
             <div className="max-w-[85%] sm:max-w-[75%]">
@@ -582,7 +582,7 @@ const SimulatorPage = () => {
                 <span>•</span>
                 <span>2:35 p.m.</span>
               </div>
-              <div className="bg-zinc-800 border border-zinc-700/50 text-zinc-200 px-4 py-2.5 rounded-2xl rounded-tl-sm text-sm">
+              <div className="bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 px-4 py-2.5 rounded-2xl rounded-tl-sm text-[15px]">
                 Hola, tienen polos oversize?
               </div>
             </div>
@@ -596,18 +596,25 @@ const SimulatorPage = () => {
                 <span>•</span>
                 <span className="font-medium text-sky-400">Eli</span>
               </div>
-              <div className="bg-sky-900/40 border border-sky-500/20 text-sky-100 px-4 py-2.5 rounded-2xl rounded-tr-sm text-sm">
+              <div className="bg-zinc-900 dark:bg-white text-white dark:text-black px-4 py-2.5 rounded-2xl rounded-tr-sm text-[15px] shadow-sm">
                 ¡Hola María! Sí, tenemos polos oversize disponibles en tallas S, M, L y XL. ¿Te gustaría ver los colores disponibles?
               </div>
             </div>
-            <div className="w-8 h-8 rounded-full bg-sky-500/20 flex items-center justify-center shrink-0 mt-4">
-              <Bot className="w-4 h-4 text-sky-400" />
+            <div className="w-8 h-8 rounded-full bg-zinc-900 dark:bg-white flex items-center justify-center shrink-0 mt-4 shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="w-5 h-5">
+                <path d="M55 35 V20 H40" stroke="currentColor" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" fill="none" className="text-white dark:text-black" />
+                <line x1="10" y1="55" x2="18" y2="55" stroke="currentColor" strokeWidth="8" strokeLinecap="round" className="text-white dark:text-black" />
+                <line x1="82" y1="55" x2="90" y2="55" stroke="currentColor" strokeWidth="8" strokeLinecap="round" className="text-white dark:text-black" />
+                <rect x="18" y="35" width="64" height="40" rx="12" stroke="currentColor" strokeWidth="8" fill="none" className="text-white dark:text-black" />
+                <rect x="34" y="48" width="10" height="18" rx="5" className="fill-sky-500" />
+                <rect x="56" y="48" width="10" height="18" rx="5" className="fill-sky-500" />
+              </svg>
             </div>
           </div>
 
           {/* Msg 3 */}
           <div className="flex gap-3 justify-start">
-            <div className="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center shrink-0 mt-4">
+            <div className="w-8 h-8 rounded-full bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center shrink-0 mt-4">
               <User className="w-4 h-4 text-zinc-500 dark:text-zinc-400" />
             </div>
             <div className="max-w-[85%] sm:max-w-[75%]">
@@ -616,7 +623,7 @@ const SimulatorPage = () => {
                 <span>•</span>
                 <span>2:41 p.m.</span>
               </div>
-              <div className="bg-zinc-800 border border-zinc-700/50 text-zinc-200 px-4 py-2.5 rounded-2xl rounded-tl-sm text-sm">
+              <div className="bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 px-4 py-2.5 rounded-2xl rounded-tl-sm text-[15px]">
                 Sí, qué colores tienen?
               </div>
             </div>
@@ -630,17 +637,24 @@ const SimulatorPage = () => {
                 <span>•</span>
                 <span className="font-medium text-sky-400">Eli</span>
               </div>
-              <div className="bg-sky-900/40 border border-sky-500/20 text-sky-100 px-4 py-2.5 rounded-2xl rounded-tr-sm text-sm">
+              <div className="bg-zinc-900 dark:bg-white text-white dark:text-black px-4 py-2.5 rounded-2xl rounded-tr-sm text-[15px] shadow-sm">
                 ¡Genial! Tenemos en negro, blanco, beige y azul marino. Todos a S/. 45.00. ¿Cuál te interesa?
               </div>
             </div>
-            <div className="w-8 h-8 rounded-full bg-sky-500/20 flex items-center justify-center shrink-0 mt-4">
-              <Bot className="w-4 h-4 text-sky-400" />
+            <div className="w-8 h-8 rounded-full bg-zinc-900 dark:bg-white flex items-center justify-center shrink-0 mt-4 shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="w-5 h-5">
+                <path d="M55 35 V20 H40" stroke="currentColor" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" fill="none" className="text-white dark:text-black" />
+                <line x1="10" y1="55" x2="18" y2="55" stroke="currentColor" strokeWidth="8" strokeLinecap="round" className="text-white dark:text-black" />
+                <line x1="82" y1="55" x2="90" y2="55" stroke="currentColor" strokeWidth="8" strokeLinecap="round" className="text-white dark:text-black" />
+                <rect x="18" y="35" width="64" height="40" rx="12" stroke="currentColor" strokeWidth="8" fill="none" className="text-white dark:text-black" />
+                <rect x="34" y="48" width="10" height="18" rx="5" className="fill-sky-500" />
+                <rect x="56" y="48" width="10" height="18" rx="5" className="fill-sky-500" />
+              </svg>
             </div>
           </div>
         </div>
 
-        <div className="p-4 border-t border-zinc-200 dark:border-zinc-800/80 bg-white dark:bg-zinc-900/50">
+        <div className="p-4 border-t border-zinc-200 dark:border-zinc-800/80 bg-zinc-50/50 dark:bg-zinc-900/20">
           <div className="flex items-center gap-2">
             <button disabled className="p-2 text-zinc-500 hover:text-zinc-500 dark:text-zinc-400 transition-colors cursor-not-allowed hidden sm:block">
               <ImageIcon className="w-5 h-5" />
@@ -649,9 +663,9 @@ const SimulatorPage = () => {
               type="text"
               placeholder="Escribe un mensaje para intervenir..."
               disabled
-              className="flex-1 bg-zinc-950 border border-zinc-800 rounded-lg py-2.5 px-4 text-sm text-zinc-300 placeholder-zinc-600 focus:outline-none cursor-not-allowed"
+              className="flex-1 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg py-2.5 px-4 text-sm text-zinc-900 dark:text-zinc-300 placeholder-zinc-500 focus:outline-none cursor-not-allowed"
             />
-            <button disabled className="p-2 bg-zinc-800 text-zinc-500 rounded-lg cursor-not-allowed">
+            <button disabled className="p-2 bg-zinc-100 dark:bg-zinc-800 text-zinc-400 dark:text-zinc-500 rounded-lg cursor-not-allowed">
               <Send className="w-5 h-5" />
             </button>
           </div>
@@ -684,54 +698,54 @@ const SimulatorPage = () => {
           <p className="text-sm text-zinc-500 dark:text-zinc-400">Resumen de la actividad del bot</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="bg-white dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800/80 rounded-xl p-5 hover:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] transition-shadow">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-sky-500/20 flex items-center justify-center shrink-0">
-                <Users className="w-6 h-6 text-sky-400" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-white dark:bg-zinc-900 p-6 md:p-8 rounded-2xl border border-zinc-200/80 dark:border-zinc-800 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_12px_40px_-4px_rgba(0,0,0,0.1)] transition-all hover:-translate-y-1 group">
+            <div className="flex items-center justify-between mb-4">
+              <p className="text-sm font-semibold text-zinc-500 dark:text-zinc-400 tracking-wide uppercase">Total Clientes</p>
+              <div className="w-10 h-10 bg-[#111111] dark:bg-white rounded-xl flex items-center justify-center text-white dark:text-black group-hover:bg-sky-500 group-hover:text-white transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-sm">
+                <Users className="w-5 h-5" />
               </div>
-              <div>
-                <p className="text-sm text-zinc-500 dark:text-zinc-400">Total Clientes</p>
-                <h3 className="text-2xl font-bold text-zinc-900 dark:text-white tracking-tight">24</h3>
-              </div>
+            </div>
+            <div>
+              <p className="text-4xl font-bold text-zinc-900 dark:text-white tracking-tighter">24</p>
             </div>
           </div>
           
-          <div className="bg-white dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800/80 rounded-xl p-5 hover:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] transition-shadow">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center shrink-0">
-                <Bot className="w-6 h-6 text-emerald-400" />
+          <div className="bg-white dark:bg-zinc-900 p-6 md:p-8 rounded-2xl border border-zinc-200/80 dark:border-zinc-800 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_12px_40px_-4px_rgba(0,0,0,0.1)] transition-all hover:-translate-y-1 group">
+            <div className="flex items-center justify-between mb-4">
+              <p className="text-sm font-semibold text-zinc-500 dark:text-zinc-400 tracking-wide uppercase">Mensajes IA</p>
+              <div className="w-10 h-10 bg-[#111111] dark:bg-white rounded-xl flex items-center justify-center text-white dark:text-black group-hover:bg-sky-500 group-hover:text-white transition-all duration-300 group-hover:scale-110 group-hover:-rotate-6 shadow-sm">
+                <Bot className="w-5 h-5" />
               </div>
-              <div>
-                <p className="text-sm text-zinc-500 dark:text-zinc-400">Mensajes del Bot</p>
-                <h3 className="text-2xl font-bold text-zinc-900 dark:text-white tracking-tight">1,847</h3>
-              </div>
+            </div>
+            <div>
+              <p className="text-4xl font-bold text-zinc-900 dark:text-white tracking-tighter">1,847</p>
             </div>
           </div>
           
-          <div className="bg-white dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800/80 rounded-xl p-5 hover:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] transition-shadow">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center shrink-0">
-                <MessageCircle className="w-6 h-6 text-purple-400" />
+          <div className="bg-white dark:bg-zinc-900 p-6 md:p-8 rounded-2xl border border-zinc-200/80 dark:border-zinc-800 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_12px_40px_-4px_rgba(0,0,0,0.1)] transition-all hover:-translate-y-1 group">
+            <div className="flex items-center justify-between mb-4">
+              <p className="text-sm font-semibold text-zinc-500 dark:text-zinc-400 tracking-wide uppercase">Horas Ahorradas</p>
+              <div className="w-10 h-10 bg-[#111111] dark:bg-white rounded-xl flex items-center justify-center text-white dark:text-black group-hover:bg-sky-500 group-hover:text-white transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-sm">
+                <MessageCircle className="w-5 h-5" />
               </div>
-              <div>
-                <p className="text-sm text-zinc-500 dark:text-zinc-400">Tiempo Ahorrado (Aprox)</p>
-                <h3 className="text-2xl font-bold text-zinc-900 dark:text-white tracking-tight">61 horas</h3>
-              </div>
+            </div>
+            <div>
+              <p className="text-4xl font-bold text-zinc-900 dark:text-white tracking-tighter">61 <span className="text-xl font-medium text-zinc-400 dark:text-zinc-500">hrs</span></p>
             </div>
           </div>
         </div>
 
-        <div className="bg-white dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800/80 rounded-xl p-6 mt-4">
+        <div className="bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 rounded-2xl p-6 mt-4 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)]">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
             <h3 className="text-lg font-medium text-zinc-900 dark:text-white tracking-tight">Actividad de los últimos 7 días</h3>
             <div className="flex items-center gap-4 text-xs">
               <div className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-sky-400"></span>
                 <span className="text-zinc-500 dark:text-zinc-400">Mensajes Recibidos</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
                 <span className="text-zinc-500 dark:text-zinc-400">Respuestas del Bot</span>
               </div>
             </div>
@@ -742,14 +756,14 @@ const SimulatorPage = () => {
               <div key={i} className="flex flex-col items-center gap-2">
                 <div className="flex items-end gap-1 h-48">
                   {/* Received bar */}
-                  <div className="w-4 sm:w-6 bg-indigo-500/80 hover:bg-indigo-400 rounded-t-sm transition-colors relative group" style={{ height: `${(d.received / maxVal) * 100}%` }}>
-                    <div className="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-zinc-800 text-xs px-2 py-1 rounded text-zinc-900 dark:text-white whitespace-nowrap transition-opacity pointer-events-none z-10">
+                  <div className="w-4 sm:w-6 bg-sky-400 hover:bg-sky-500 rounded-t-sm transition-colors relative group" style={{ height: `${(d.received / maxVal) * 100}%` }}>
+                    <div className="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-zinc-900 dark:bg-white text-xs px-2 py-1 rounded text-white dark:text-zinc-900 whitespace-nowrap transition-opacity pointer-events-none z-10 shadow-sm">
                       {d.received}
                     </div>
                   </div>
                   {/* Bot bar */}
-                  <div className="w-4 sm:w-6 bg-emerald-500/80 hover:bg-emerald-400 rounded-t-sm transition-colors relative group" style={{ height: `${(d.bot / maxVal) * 100}%` }}>
-                    <div className="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-zinc-800 text-xs px-2 py-1 rounded text-zinc-900 dark:text-white whitespace-nowrap transition-opacity pointer-events-none z-10">
+                  <div className="w-4 sm:w-6 bg-emerald-400 hover:bg-emerald-500 rounded-t-sm transition-colors relative group" style={{ height: `${(d.bot / maxVal) * 100}%` }}>
+                    <div className="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-zinc-900 dark:bg-white text-xs px-2 py-1 rounded text-white dark:text-zinc-900 whitespace-nowrap transition-opacity pointer-events-none z-10 shadow-sm">
                       {d.bot}
                     </div>
                   </div>
@@ -791,10 +805,10 @@ const SimulatorPage = () => {
           { title: 'Métodos de Pago y Cambios', badge: 'pagos', desc: 'Aceptamos Visa, Mastercard, Amex, PayPal y transferencias. Cambios hasta 30 días con etiquetas y sin uso.' },
           { title: '¿Cuál es la dirección del centro comercial donde tienen sucursal en BA?', badge: 'auto-aprendido', desc: 'La sucursal del Abasto está ubicada en Urquiza 152, Av. Ecuador, Buenos Aires.' }
         ].map((item, i) => (
-          <div key={i} className={`border rounded-xl p-5 transition-all hover:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] hover:-translate-y-0.5 cursor-default ${
+          <div key={i} className={`border rounded-2xl p-5 transition-all hover:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] hover:-translate-y-0.5 cursor-default shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] ${
             i === 3 
               ? 'bg-emerald-900/10 border-emerald-500/20 hover:bg-emerald-900/20' 
-              : 'bg-white dark:bg-zinc-900/50 border-zinc-200 dark:border-zinc-800/80 hover:bg-zinc-100 dark:bg-zinc-800/50'
+              : 'bg-white dark:bg-zinc-900 border-zinc-200/80 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-800/50'
           }`}>
             <div className="font-mono text-[13px] mb-3 tracking-tight transition-colors flex items-center gap-1">
               <span className={i === 3 ? 'text-emerald-400' : 'text-zinc-500'}>[{item.badge}]</span>
@@ -817,35 +831,35 @@ const SimulatorPage = () => {
 
       <div className="space-y-4">
         <div>
-          <label className="block text-sm font-medium text-zinc-300 mb-1">System Prompt</label>
+          <label className="block text-sm font-medium text-zinc-900 dark:text-zinc-300 mb-1">System Prompt</label>
           <textarea 
             disabled
             rows={5}
-            className="w-full bg-white dark:bg-zinc-900/50 border border-zinc-800 rounded-lg p-3 text-sm text-zinc-500 dark:text-zinc-400 focus:outline-none resize-none cursor-not-allowed"
+            className="w-full bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-lg p-3 text-sm text-zinc-900 dark:text-zinc-400 focus:outline-none resize-none cursor-not-allowed"
             value="Eres un asistente virtual amable y profesional para una tienda de ropa. Tu objetivo es ayudar a los clientes con información sobre polos oversize, tallas, colores y precios. Siempre responde en español."
           />
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-zinc-300 mb-1">Modelo AI</label>
-            <select disabled className="w-full bg-white dark:bg-zinc-900/50 border border-zinc-800 rounded-lg p-2.5 text-sm text-zinc-500 dark:text-zinc-400 cursor-not-allowed appearance-none">
+            <label className="block text-sm font-medium text-zinc-900 dark:text-zinc-300 mb-1">Modelo AI</label>
+            <select disabled className="w-full bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-lg p-2.5 text-sm text-zinc-900 dark:text-zinc-400 cursor-not-allowed appearance-none">
               <option>openai/gpt-oss-20b (Groq)</option>
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium text-zinc-300 mb-1">Temperatura</label>
-            <input type="text" disabled value="0.7" className="w-full bg-white dark:bg-zinc-900/50 border border-zinc-800 rounded-lg p-2.5 text-sm text-zinc-500 dark:text-zinc-400 cursor-not-allowed" />
+            <label className="block text-sm font-medium text-zinc-900 dark:text-zinc-300 mb-1">Temperatura</label>
+            <input type="text" disabled value="0.7" className="w-full bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-lg p-2.5 text-sm text-zinc-900 dark:text-zinc-400 cursor-not-allowed" />
           </div>
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-zinc-300 mb-1">Token de Meta</label>
-          <input type="password" disabled value="EAAGm0PX4ZCQoBO..." className="w-full bg-white dark:bg-zinc-900/50 border border-zinc-800 rounded-lg p-2.5 text-sm text-zinc-500 dark:text-zinc-400 cursor-not-allowed font-mono" />
+          <label className="block text-sm font-medium text-zinc-900 dark:text-zinc-300 mb-1">Token de Meta</label>
+          <input type="password" disabled value="EAAGm0PX4ZCQoBO..." className="w-full bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-lg p-2.5 text-sm text-zinc-900 dark:text-zinc-400 cursor-not-allowed font-mono" />
         </div>
 
         <div className="pt-4 border-t border-zinc-200 dark:border-zinc-800/80 flex justify-end">
-          <button disabled className="bg-zinc-800 text-zinc-500 px-6 py-2.5 rounded-lg text-sm font-medium cursor-not-allowed">
+          <button disabled className="bg-zinc-800 text-white px-6 py-2.5 rounded-lg text-sm font-medium cursor-not-allowed">
             Guardar Cambios
           </button>
         </div>
@@ -859,8 +873,8 @@ const SimulatorPage = () => {
       <div className="absolute inset-0 pointer-events-none opacity-[0.03] dark:opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)', backgroundSize: '24px 24px' }}></div>
 
       {/* Floating CTA */}
-      <Link to='/login' className='fixed bottom-6 right-6 z-50 bg-zinc-900 dark:bg-white text-white dark:text-black px-6 py-3 rounded-full font-bold shadow-xl hover:-translate-y-1 transition-transform flex items-center gap-2 text-sm'>
-        <Zap className='w-4 h-4' /> Crear cuenta gratis
+      <Link to='/login' className='fixed bottom-6 right-6 z-50 bg-zinc-900 dark:bg-white text-white dark:text-black px-6 py-3 rounded-full font-bold shadow-xl hover:-translate-y-1 transition-transform flex items-center justify-center text-sm'>
+        Crear cuenta gratis
       </Link>
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 pt-8 md:pt-12 pb-20 md:pb-12 flex flex-col h-[100dvh]">
