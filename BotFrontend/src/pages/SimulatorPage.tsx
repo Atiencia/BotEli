@@ -279,15 +279,15 @@ const SimulatorPage = () => {
   const renderChatBot = () => (
     <div className="flex flex-col h-full items-center justify-center p-4">
       {/* iPhone Device Frame */}
-      <div className="relative w-full max-w-[375px] h-[750px] max-h-full bg-black rounded-[50px] border-[12px] border-zinc-900 shadow-2xl flex flex-col overflow-hidden shrink-0">
+      <div className="relative w-full max-w-[375px] h-[750px] max-h-full bg-white dark:bg-black rounded-[50px] border-[12px] border-zinc-200 dark:border-zinc-900 shadow-2xl flex flex-col overflow-hidden shrink-0">
         
         {/* Dynamic Island / Notch area */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-zinc-900 rounded-b-2xl z-20"></div>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-zinc-200 dark:bg-zinc-900 rounded-b-2xl z-20"></div>
 
         {/* IG Direct Header */}
-        <div className="flex items-center justify-between px-3 py-3 pt-8 bg-black border-b border-zinc-900 z-10 shrink-0">
+        <div className="flex items-center justify-between px-3 py-3 pt-8 bg-white dark:bg-black border-b border-zinc-200 dark:border-zinc-900 z-10 shrink-0">
           <div className="flex items-center gap-2">
-            <button className="text-white hover:opacity-70 transition-opacity">
+            <button className="text-zinc-900 dark:text-white hover:opacity-70 transition-opacity">
               <ChevronLeft className="w-8 h-8 -ml-2" />
             </button>
             <div className="flex items-center gap-3">
@@ -296,31 +296,31 @@ const SimulatorPage = () => {
               </div>
               <div className="flex flex-col">
                 <div className="flex items-center gap-1">
-                  <span className="text-white text-[15px] font-semibold tracking-tight">styleaura_oficial</span>
+                  <span className="text-zinc-900 dark:text-white text-[15px] font-semibold tracking-tight">styleaura_oficial</span>
                   <svg aria-label="Verificado" className="w-3.5 h-3.5 text-blue-500 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.9 14.7L6 12.6l1.5-1.5 2.6 2.6 6.4-6.4 1.5 1.5-7.9 7.9z"></path></svg>
                 </div>
                 <span className="text-zinc-500 text-[12px]">Cuenta comercial</span>
               </div>
             </div>
           </div>
-          <div className="flex items-center gap-4 text-white">
+          <div className="flex items-center gap-4 text-zinc-900 dark:text-white">
             <Phone className="w-6 h-6" />
             <Video className="w-6 h-6" />
           </div>
         </div>
         
         {/* Chat Area */}
-        <div className="flex-1 overflow-y-auto px-4 py-4 space-y-4 bg-black flex flex-col">
+        <div className="flex-1 overflow-y-auto px-4 py-4 space-y-4 bg-white dark:bg-black flex flex-col">
           
           {/* Profile Info in chat */}
           <div className="flex flex-col items-center justify-center pt-4 pb-6 gap-2">
             <div className="w-24 h-24 rounded-full overflow-hidden bg-zinc-800 border border-zinc-700">
                 <img src="/logo.jpg" alt="StyleAura" className="w-full h-full object-cover opacity-80" onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.parentElement!.innerHTML = '<div class="w-full h-full bg-sky-900 flex items-center justify-center text-3xl font-bold text-sky-200">SA</div>'; }} />
             </div>
-            <h2 className="text-white text-xl font-semibold mt-1">StyleAura Oficial</h2>
+            <h2 className="text-zinc-900 dark:text-white text-xl font-semibold mt-1">StyleAura Oficial</h2>
             <p className="text-zinc-500 text-[14px]">styleaura_oficial • Instagram</p>
             <p className="text-zinc-500 text-[14px]">24 mil seguidores • 150 publicaciones</p>
-            <button className="bg-zinc-800 text-white text-[14px] font-semibold px-4 py-1.5 rounded-lg mt-2 hover:bg-zinc-700 transition-colors">Ver perfil</button>
+            <button className="bg-zinc-800 text-zinc-900 dark:text-white text-[14px] font-semibold px-4 py-1.5 rounded-lg mt-2 hover:bg-zinc-700 transition-colors">Ver perfil</button>
           </div>
           
           <div className="text-center text-zinc-600 text-[12px] my-4 font-medium">Hoy 2:30 p.m.</div>
@@ -334,10 +334,10 @@ const SimulatorPage = () => {
               )}
               <div className={`max-w-[75%] rounded-3xl px-4 py-3 ${
                 msg.role === 'user' 
-                  ? 'bg-blue-600 text-white' 
+                  ? 'bg-zinc-100 dark:bg-zinc-900 text-zinc-900 dark:text-white rounded-tl-sm' 
                   : msg.isHuman 
-                    ? 'bg-amber-900/50 text-white border border-amber-700/50' 
-                    : 'bg-[#262626] text-white'
+                    ? 'bg-amber-100 dark:bg-amber-900/50 text-amber-900 dark:text-amber-100 border border-amber-200 dark:border-amber-700/50 rounded-tr-sm' 
+                    : 'bg-zinc-900 dark:bg-[#262626] text-white rounded-tr-sm'
               }`}>
                 <p className="whitespace-pre-wrap text-[15px] leading-snug">{msg.content}</p>
               </div>
@@ -362,7 +362,7 @@ const SimulatorPage = () => {
         <div className="px-3 py-3 bg-black border-t border-zinc-900 pb-8 shrink-0 relative">
           
           {showReactivated && (
-            <div className="absolute -top-10 left-1/2 -translate-x-1/2 bg-green-500/90 text-white text-xs font-semibold px-4 py-1.5 rounded-full shadow-lg flex items-center gap-1.5 animate-fade-in-up z-20">
+            <div className="absolute -top-10 left-1/2 -translate-x-1/2 bg-green-500/90 text-zinc-900 dark:text-white text-xs font-semibold px-4 py-1.5 rounded-full shadow-lg flex items-center gap-1.5 animate-fade-in-up z-20">
               <span>✅</span> Bot Reactivado
             </div>
           )}
@@ -376,7 +376,7 @@ const SimulatorPage = () => {
               </div>
               <button 
                 onClick={simulateHumanResponse}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-xl transition-colors text-sm shadow-lg shadow-blue-900/20"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-zinc-900 dark:text-white font-medium py-3 rounded-xl transition-colors text-sm shadow-lg shadow-blue-900/20"
               >
                 Simular respuesta del agente
               </button>
@@ -389,14 +389,14 @@ const SimulatorPage = () => {
                 className="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center shrink-0 hover:bg-blue-600 transition-colors"
                 disabled={isRecording}
               >
-                <Camera className="w-5 h-5 text-white" />
+                <Camera className="w-5 h-5 text-zinc-900 dark:text-white" />
               </button>
               <div className="flex-1 relative flex items-center">
                 {isRecording ? (
                   <div className="w-full bg-zinc-900 rounded-full py-2.5 pl-4 pr-12 flex items-center justify-between overflow-hidden">
                     <div className="flex items-center gap-2">
                       <div className="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></div>
-                      <span className="text-white text-[15px] font-medium">
+                      <span className="text-zinc-900 dark:text-white text-[15px] font-medium">
                         {Math.floor(recordTime / 60)}:{(recordTime % 60).toString().padStart(2, '0')}
                       </span>
                     </div>
@@ -418,7 +418,7 @@ const SimulatorPage = () => {
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     placeholder="Mensaje..."
-                    className="w-full bg-zinc-900 rounded-full py-2.5 pl-4 pr-10 text-[15px] text-white placeholder-zinc-500 focus:outline-none"
+                    className="w-full bg-zinc-900 rounded-full py-2.5 pl-4 pr-10 text-[15px] text-zinc-900 dark:text-white placeholder-zinc-500 focus:outline-none"
                     disabled={isLoading}
                   />
                 )}
@@ -426,7 +426,7 @@ const SimulatorPage = () => {
                   <button 
                     type="submit" 
                     disabled={!input.trim() || isLoading}
-                    className="absolute right-2 p-1.5 text-white disabled:opacity-0 transition-opacity"
+                    className="absolute right-2 p-1.5 text-zinc-900 dark:text-white disabled:opacity-0 transition-opacity"
                   >
                     <Send className="w-5 h-5" />
                   </button>
@@ -435,7 +435,7 @@ const SimulatorPage = () => {
                   <button 
                     type="button"
                     onClick={toggleAudioRecording}
-                    className={`absolute right-3 transition-all ${isRecording ? 'text-red-500' : 'text-white hover:opacity-70'}`}
+                    className={`absolute right-3 transition-all ${isRecording ? 'text-red-500' : 'text-zinc-900 dark:text-white hover:opacity-70'}`}
                   >
                     {isRecording ? (
                        <div className="w-4 h-4 rounded-sm bg-red-500 hover:bg-red-600 transition-colors" />
@@ -446,7 +446,7 @@ const SimulatorPage = () => {
                 )}
               </div>
               {!input.trim() && !isRecording && (
-                <div className="flex items-center gap-3 text-white shrink-0 pr-1">
+                <div className="flex items-center gap-3 text-zinc-900 dark:text-white shrink-0 pr-1">
                   <button type="button" onClick={sendSimulatedImage} className="hover:opacity-70">
                     <ImageIcon className="w-6 h-6" />
                   </button>
@@ -461,30 +461,30 @@ const SimulatorPage = () => {
   );
 
   const renderConversaciones = () => (
-    <div className="flex h-full border border-zinc-800/80 rounded-xl overflow-hidden bg-[#0a0a0a]">
+    <div className="flex h-full border border-zinc-200 dark:border-zinc-800/80 rounded-xl overflow-hidden bg-white dark:bg-[#0a0a0a]">
       {/* Sidebar */}
-      <div className="w-1/3 border-r border-zinc-800/80 bg-zinc-900/30 flex flex-col hidden md:flex">
-        <div className="p-4 border-b border-zinc-800/80">
+      <div className="w-1/3 border-r border-zinc-200 dark:border-zinc-800/80 bg-zinc-900/30 flex flex-col hidden md:flex">
+        <div className="p-4 border-b border-zinc-200 dark:border-zinc-800/80">
           <div className="relative">
             <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500" />
             <input 
               type="text" 
               placeholder="Buscar..." 
-              className="w-full bg-zinc-950 border border-zinc-800 rounded-lg py-2 pl-9 pr-3 text-sm text-zinc-300 focus:outline-none pointer-events-none"
+              className="w-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg py-2 pl-9 pr-3 text-sm text-zinc-900 dark:text-zinc-300 focus:outline-none pointer-events-none"
               readOnly
             />
           </div>
         </div>
         <div className="flex-1 overflow-y-auto">
           {/* Active User */}
-          <div className="p-3 border-b border-zinc-800/50 bg-sky-900/20 cursor-pointer flex items-center gap-3 relative">
-            <div className="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center shrink-0 relative">
-              <User className="w-5 h-5 text-zinc-400" />
-              <Instagram className="w-4 h-4 absolute -bottom-1 -right-1 bg-zinc-900 rounded-full shadow-[0_0_0_2px_#111827]" />
+          <div className="p-3 border-b border-zinc-200 dark:border-zinc-800/50 bg-sky-900/20 cursor-pointer flex items-center gap-3 relative">
+            <div className="w-10 h-10 rounded-full bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center shrink-0 relative">
+              <User className="w-5 h-5 text-zinc-500 dark:text-zinc-400" />
+              <Instagram className="w-4 h-4 absolute -bottom-1 -right-1 bg-white dark:bg-zinc-900 rounded-full shadow-[0_0_0_2px_#ffffff] dark:shadow-[0_0_0_2px_#18181b]" />
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex justify-between items-start">
-                <h4 className="text-sm font-medium text-white truncate">
+                <h4 className="text-sm font-medium text-zinc-900 dark:text-white truncate">
                   María García
                 </h4>
                 <span className="text-[10px] text-zinc-500">2:41 p.m.</span>
@@ -499,19 +499,19 @@ const SimulatorPage = () => {
           </div>
           
           {/* Other Users */}
-          <div className="p-3 border-b border-zinc-800/50 hover:bg-zinc-800/30 cursor-pointer flex items-center gap-3 opacity-70">
-            <div className="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center shrink-0 relative">
-              <User className="w-5 h-5 text-zinc-400" />
-              <Messenger className="w-4 h-4 absolute -bottom-1 -right-1 bg-zinc-900 rounded-full shadow-[0_0_0_2px_#111827]" />
+          <div className="p-3 border-b border-zinc-200 dark:border-zinc-800/50 hover:bg-zinc-50 hover:dark:bg-zinc-800/30 cursor-pointer flex items-center gap-3 opacity-70">
+            <div className="w-10 h-10 rounded-full bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center shrink-0 relative">
+              <User className="w-5 h-5 text-zinc-500 dark:text-zinc-400" />
+              <Messenger className="w-4 h-4 absolute -bottom-1 -right-1 bg-white dark:bg-zinc-900 rounded-full shadow-[0_0_0_2px_#ffffff] dark:shadow-[0_0_0_2px_#18181b]" />
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex justify-between items-start">
-                <h4 className="text-sm font-medium text-white truncate">
+                <h4 className="text-sm font-medium text-zinc-900 dark:text-white truncate">
                   Carlos López
                 </h4>
                 <span className="text-[10px] text-zinc-500">1:15 p.m.</span>
               </div>
-              <p className="text-xs text-zinc-400 truncate mt-0.5">Necesito hablar con alguien</p>
+              <p className="text-xs text-zinc-500 dark:text-zinc-400 truncate mt-0.5">Necesito hablar con alguien</p>
               <div className="mt-1 flex items-center gap-1">
                 <span className="w-2 h-2 rounded-full bg-amber-500"></span>
                 <span className="text-[10px] text-amber-500 uppercase tracking-wider">Humano al mando</span>
@@ -519,19 +519,19 @@ const SimulatorPage = () => {
             </div>
           </div>
 
-          <div className="p-3 border-b border-zinc-800/50 hover:bg-zinc-800/30 cursor-pointer flex items-center gap-3 opacity-70">
-            <div className="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center shrink-0 relative">
-              <User className="w-5 h-5 text-zinc-400" />
-              <Messenger className="w-4 h-4 absolute -bottom-1 -right-1 bg-zinc-900 rounded-full shadow-[0_0_0_2px_#111827]" />
+          <div className="p-3 border-b border-zinc-200 dark:border-zinc-800/50 hover:bg-zinc-50 hover:dark:bg-zinc-800/30 cursor-pointer flex items-center gap-3 opacity-70">
+            <div className="w-10 h-10 rounded-full bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center shrink-0 relative">
+              <User className="w-5 h-5 text-zinc-500 dark:text-zinc-400" />
+              <Messenger className="w-4 h-4 absolute -bottom-1 -right-1 bg-white dark:bg-zinc-900 rounded-full shadow-[0_0_0_2px_#ffffff] dark:shadow-[0_0_0_2px_#18181b]" />
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex justify-between items-start">
-                <h4 className="text-sm font-medium text-white truncate">
+                <h4 className="text-sm font-medium text-zinc-900 dark:text-white truncate">
                   Ana Rodríguez
                 </h4>
                 <span className="text-[10px] text-zinc-500">Ayer</span>
               </div>
-              <p className="text-xs text-zinc-400 truncate mt-0.5">Gracias por la información</p>
+              <p className="text-xs text-zinc-500 dark:text-zinc-400 truncate mt-0.5">Gracias por la información</p>
               <div className="mt-1 flex items-center gap-1">
                 <span className="w-2 h-2 rounded-full bg-green-500"></span>
                 <span className="text-[10px] text-green-500 uppercase tracking-wider">Bot Activo</span>
@@ -543,16 +543,16 @@ const SimulatorPage = () => {
       
       {/* Main Panel */}
       <div className="w-full md:w-2/3 flex flex-col relative">
-        <div className="p-4 border-b border-zinc-800/80 bg-zinc-900/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-0">
+        <div className="p-4 border-b border-zinc-200 dark:border-zinc-800/80 bg-white dark:bg-zinc-900/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-0">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center">
-              <User className="w-5 h-5 text-zinc-400" />
+            <div className="w-10 h-10 rounded-full bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center">
+              <User className="w-5 h-5 text-zinc-500 dark:text-zinc-400" />
             </div>
             <div>
-              <h3 className="font-medium text-white text-sm flex items-center gap-2">
+              <h3 className="font-medium text-zinc-900 dark:text-white text-sm flex items-center gap-2">
                 Cliente: María García <Instagram className="w-4 h-4 text-pink-500" />
               </h3>
-              <p className="text-xs text-zinc-400 flex items-center gap-1">
+              <p className="text-xs text-zinc-500 dark:text-zinc-400 flex items-center gap-1">
                 <Clock className="w-3 h-3" /> Última act: 2:41:58 p.m.
               </p>
             </div>
@@ -574,7 +574,7 @@ const SimulatorPage = () => {
           {/* Msg 1 */}
           <div className="flex gap-3 justify-start">
             <div className="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center shrink-0 mt-4">
-              <User className="w-4 h-4 text-zinc-400" />
+              <User className="w-4 h-4 text-zinc-500 dark:text-zinc-400" />
             </div>
             <div className="max-w-[85%] sm:max-w-[75%]">
               <div className="flex items-center gap-1 mb-1 ml-1 text-[11px] text-zinc-500">
@@ -608,7 +608,7 @@ const SimulatorPage = () => {
           {/* Msg 3 */}
           <div className="flex gap-3 justify-start">
             <div className="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center shrink-0 mt-4">
-              <User className="w-4 h-4 text-zinc-400" />
+              <User className="w-4 h-4 text-zinc-500 dark:text-zinc-400" />
             </div>
             <div className="max-w-[85%] sm:max-w-[75%]">
               <div className="flex items-center gap-1 mb-1 ml-1 text-[11px] text-zinc-500">
@@ -640,9 +640,9 @@ const SimulatorPage = () => {
           </div>
         </div>
 
-        <div className="p-4 border-t border-zinc-800/80 bg-zinc-900/50">
+        <div className="p-4 border-t border-zinc-200 dark:border-zinc-800/80 bg-white dark:bg-zinc-900/50">
           <div className="flex items-center gap-2">
-            <button disabled className="p-2 text-zinc-500 hover:text-zinc-400 transition-colors cursor-not-allowed hidden sm:block">
+            <button disabled className="p-2 text-zinc-500 hover:text-zinc-500 dark:text-zinc-400 transition-colors cursor-not-allowed hidden sm:block">
               <ImageIcon className="w-5 h-5" />
             </button>
             <input
@@ -657,8 +657,8 @@ const SimulatorPage = () => {
           </div>
         </div>
 
-        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 bg-zinc-900/80 backdrop-blur-sm border border-zinc-800/50 px-3 py-1 rounded-full shadow-lg">
-          <p className="text-[10px] text-zinc-400 uppercase tracking-widest font-semibold flex items-center gap-1">
+        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 bg-zinc-900/80 backdrop-blur-sm border border-zinc-200 dark:border-zinc-800/50 px-3 py-1 rounded-full shadow-lg">
+          <p className="text-[10px] text-zinc-500 dark:text-zinc-400 uppercase tracking-widest font-semibold flex items-center gap-1">
           </p>
         </div>
       </div>
@@ -680,59 +680,59 @@ const SimulatorPage = () => {
     return (
       <div className="space-y-4 h-full overflow-y-auto pr-2">
         <div className="mb-4">
-          <h2 className="text-xl font-semibold text-white tracking-tight">Métricas de Rendimiento</h2>
-          <p className="text-sm text-zinc-400">Resumen de la actividad del bot</p>
+          <h2 className="text-xl font-semibold text-zinc-900 dark:text-white tracking-tight">Métricas de Rendimiento</h2>
+          <p className="text-sm text-zinc-500 dark:text-zinc-400">Resumen de la actividad del bot</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="bg-zinc-900/50 border border-zinc-800/80 rounded-xl p-5 hover:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] transition-shadow">
+          <div className="bg-white dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800/80 rounded-xl p-5 hover:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] transition-shadow">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-full bg-sky-500/20 flex items-center justify-center shrink-0">
                 <Users className="w-6 h-6 text-sky-400" />
               </div>
               <div>
-                <p className="text-sm text-zinc-400">Total Clientes</p>
-                <h3 className="text-2xl font-bold text-white tracking-tight">24</h3>
+                <p className="text-sm text-zinc-500 dark:text-zinc-400">Total Clientes</p>
+                <h3 className="text-2xl font-bold text-zinc-900 dark:text-white tracking-tight">24</h3>
               </div>
             </div>
           </div>
           
-          <div className="bg-zinc-900/50 border border-zinc-800/80 rounded-xl p-5 hover:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] transition-shadow">
+          <div className="bg-white dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800/80 rounded-xl p-5 hover:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] transition-shadow">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center shrink-0">
                 <Bot className="w-6 h-6 text-emerald-400" />
               </div>
               <div>
-                <p className="text-sm text-zinc-400">Mensajes del Bot</p>
-                <h3 className="text-2xl font-bold text-white tracking-tight">1,847</h3>
+                <p className="text-sm text-zinc-500 dark:text-zinc-400">Mensajes del Bot</p>
+                <h3 className="text-2xl font-bold text-zinc-900 dark:text-white tracking-tight">1,847</h3>
               </div>
             </div>
           </div>
           
-          <div className="bg-zinc-900/50 border border-zinc-800/80 rounded-xl p-5 hover:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] transition-shadow">
+          <div className="bg-white dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800/80 rounded-xl p-5 hover:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] transition-shadow">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center shrink-0">
                 <MessageCircle className="w-6 h-6 text-purple-400" />
               </div>
               <div>
-                <p className="text-sm text-zinc-400">Tiempo Ahorrado (Aprox)</p>
-                <h3 className="text-2xl font-bold text-white tracking-tight">61 horas</h3>
+                <p className="text-sm text-zinc-500 dark:text-zinc-400">Tiempo Ahorrado (Aprox)</p>
+                <h3 className="text-2xl font-bold text-zinc-900 dark:text-white tracking-tight">61 horas</h3>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="bg-zinc-900/50 border border-zinc-800/80 rounded-xl p-6 mt-4">
+        <div className="bg-white dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800/80 rounded-xl p-6 mt-4">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
-            <h3 className="text-lg font-medium text-white tracking-tight">Actividad de los últimos 7 días</h3>
+            <h3 className="text-lg font-medium text-zinc-900 dark:text-white tracking-tight">Actividad de los últimos 7 días</h3>
             <div className="flex items-center gap-4 text-xs">
               <div className="flex items-center gap-1.5">
                 <span className="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
-                <span className="text-zinc-400">Mensajes Recibidos</span>
+                <span className="text-zinc-500 dark:text-zinc-400">Mensajes Recibidos</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
-                <span className="text-zinc-400">Respuestas del Bot</span>
+                <span className="text-zinc-500 dark:text-zinc-400">Respuestas del Bot</span>
               </div>
             </div>
           </div>
@@ -743,13 +743,13 @@ const SimulatorPage = () => {
                 <div className="flex items-end gap-1 h-48">
                   {/* Received bar */}
                   <div className="w-4 sm:w-6 bg-indigo-500/80 hover:bg-indigo-400 rounded-t-sm transition-colors relative group" style={{ height: `${(d.received / maxVal) * 100}%` }}>
-                    <div className="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-zinc-800 text-xs px-2 py-1 rounded text-white whitespace-nowrap transition-opacity pointer-events-none z-10">
+                    <div className="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-zinc-800 text-xs px-2 py-1 rounded text-zinc-900 dark:text-white whitespace-nowrap transition-opacity pointer-events-none z-10">
                       {d.received}
                     </div>
                   </div>
                   {/* Bot bar */}
                   <div className="w-4 sm:w-6 bg-emerald-500/80 hover:bg-emerald-400 rounded-t-sm transition-colors relative group" style={{ height: `${(d.bot / maxVal) * 100}%` }}>
-                    <div className="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-zinc-800 text-xs px-2 py-1 rounded text-white whitespace-nowrap transition-opacity pointer-events-none z-10">
+                    <div className="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-zinc-800 text-xs px-2 py-1 rounded text-zinc-900 dark:text-white whitespace-nowrap transition-opacity pointer-events-none z-10">
                       {d.bot}
                     </div>
                   </div>
@@ -767,10 +767,10 @@ const SimulatorPage = () => {
     <div className="h-full overflow-y-auto pr-2">
       <div className="flex justify-between items-center mb-4">
         <div>
-          <h2 className="text-xl font-semibold text-white tracking-tight">Base de Conocimiento</h2>
-          <p className="text-sm text-zinc-400">Información que el bot usa para responder</p>
+          <h2 className="text-xl font-semibold text-zinc-900 dark:text-white tracking-tight">Base de Conocimiento</h2>
+          <p className="text-sm text-zinc-500 dark:text-zinc-400">Información que el bot usa para responder</p>
         </div>
-        <button disabled className="flex items-center gap-2 bg-zinc-800/50 text-zinc-500 border border-zinc-800 px-4 py-2 rounded-lg text-sm cursor-not-allowed">
+        <button disabled className="flex items-center gap-2 bg-zinc-100 dark:bg-zinc-800/50 text-zinc-500 border border-zinc-800 px-4 py-2 rounded-lg text-sm cursor-not-allowed">
           <Plus className="w-4 h-4" />
           Nuevo
         </button>
@@ -794,14 +794,14 @@ const SimulatorPage = () => {
           <div key={i} className={`border rounded-xl p-5 transition-all hover:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] hover:-translate-y-0.5 cursor-default ${
             i === 3 
               ? 'bg-emerald-900/10 border-emerald-500/20 hover:bg-emerald-900/20' 
-              : 'bg-zinc-900/50 border-zinc-800/80 hover:bg-zinc-800/50'
+              : 'bg-white dark:bg-zinc-900/50 border-zinc-200 dark:border-zinc-800/80 hover:bg-zinc-100 dark:bg-zinc-800/50'
           }`}>
             <div className="font-mono text-[13px] mb-3 tracking-tight transition-colors flex items-center gap-1">
               <span className={i === 3 ? 'text-emerald-400' : 'text-zinc-500'}>[{item.badge}]</span>
               {i === 3 && <Sparkles className="w-3 h-3 text-emerald-400 inline" />}
             </div>
-            <h3 className="font-bold text-white text-lg mb-2 tracking-tight">{item.title}</h3>
-            <p className="text-[14px] text-zinc-400 line-clamp-3 leading-relaxed">{item.desc}</p>
+            <h3 className="font-bold text-zinc-900 dark:text-white text-lg mb-2 tracking-tight">{item.title}</h3>
+            <p className="text-[14px] text-zinc-500 dark:text-zinc-400 line-clamp-3 leading-relaxed">{item.desc}</p>
           </div>
         ))}
       </div>
@@ -821,7 +821,7 @@ const SimulatorPage = () => {
           <textarea 
             disabled
             rows={5}
-            className="w-full bg-zinc-900/50 border border-zinc-800 rounded-lg p-3 text-sm text-zinc-400 focus:outline-none resize-none cursor-not-allowed"
+            className="w-full bg-white dark:bg-zinc-900/50 border border-zinc-800 rounded-lg p-3 text-sm text-zinc-500 dark:text-zinc-400 focus:outline-none resize-none cursor-not-allowed"
             value="Eres un asistente virtual amable y profesional para una tienda de ropa. Tu objetivo es ayudar a los clientes con información sobre polos oversize, tallas, colores y precios. Siempre responde en español."
           />
         </div>
@@ -829,22 +829,22 @@ const SimulatorPage = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium text-zinc-300 mb-1">Modelo AI</label>
-            <select disabled className="w-full bg-zinc-900/50 border border-zinc-800 rounded-lg p-2.5 text-sm text-zinc-400 cursor-not-allowed appearance-none">
+            <select disabled className="w-full bg-white dark:bg-zinc-900/50 border border-zinc-800 rounded-lg p-2.5 text-sm text-zinc-500 dark:text-zinc-400 cursor-not-allowed appearance-none">
               <option>openai/gpt-oss-20b (Groq)</option>
             </select>
           </div>
           <div>
             <label className="block text-sm font-medium text-zinc-300 mb-1">Temperatura</label>
-            <input type="text" disabled value="0.7" className="w-full bg-zinc-900/50 border border-zinc-800 rounded-lg p-2.5 text-sm text-zinc-400 cursor-not-allowed" />
+            <input type="text" disabled value="0.7" className="w-full bg-white dark:bg-zinc-900/50 border border-zinc-800 rounded-lg p-2.5 text-sm text-zinc-500 dark:text-zinc-400 cursor-not-allowed" />
           </div>
         </div>
 
         <div>
           <label className="block text-sm font-medium text-zinc-300 mb-1">Token de Meta</label>
-          <input type="password" disabled value="EAAGm0PX4ZCQoBO..." className="w-full bg-zinc-900/50 border border-zinc-800 rounded-lg p-2.5 text-sm text-zinc-400 cursor-not-allowed font-mono" />
+          <input type="password" disabled value="EAAGm0PX4ZCQoBO..." className="w-full bg-white dark:bg-zinc-900/50 border border-zinc-800 rounded-lg p-2.5 text-sm text-zinc-500 dark:text-zinc-400 cursor-not-allowed font-mono" />
         </div>
 
-        <div className="pt-4 border-t border-zinc-800/80 flex justify-end">
+        <div className="pt-4 border-t border-zinc-200 dark:border-zinc-800/80 flex justify-end">
           <button disabled className="bg-zinc-800 text-zinc-500 px-6 py-2.5 rounded-lg text-sm font-medium cursor-not-allowed">
             Guardar Cambios
           </button>
@@ -854,12 +854,12 @@ const SimulatorPage = () => {
   );
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-zinc-100 relative overflow-hidden font-sans selection:bg-sky-500/30">
+    <div className="min-h-screen bg-white dark:bg-[#0a0a0a] text-zinc-900 dark:text-zinc-100 relative overflow-hidden font-sans selection:bg-sky-500/30">
       {/* Background grids */}
-      <div className="absolute inset-0 pointer-events-none opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '24px 24px' }}></div>
+      <div className="absolute inset-0 pointer-events-none opacity-[0.03] dark:opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)', backgroundSize: '24px 24px' }}></div>
 
       {/* Floating CTA */}
-      <Link to='/login' className='fixed bottom-6 right-6 z-50 bg-white text-black px-6 py-3 rounded-full font-bold shadow-xl hover:-translate-y-1 transition-transform flex items-center gap-2 text-sm'>
+      <Link to='/login' className='fixed bottom-6 right-6 z-50 bg-zinc-900 dark:bg-white text-white dark:text-black px-6 py-3 rounded-full font-bold shadow-xl hover:-translate-y-1 transition-transform flex items-center gap-2 text-sm'>
         <Zap className='w-4 h-4' /> Crear cuenta gratis
       </Link>
 
@@ -868,16 +868,16 @@ const SimulatorPage = () => {
         {/* Header Area */}
         <div className="flex flex-col items-center justify-center gap-6 mb-8">
           <div className="w-full relative flex items-center justify-center">
-            <Link to="/" className="absolute left-0 inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors text-sm font-medium">
+            <Link to="/" className="absolute left-0 inline-flex items-center gap-2 text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:text-white transition-colors text-sm font-medium">
               <ArrowLeft className="w-4 h-4" /> <span className="hidden sm:inline">Volver</span>
             </Link>
-            <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-white text-center">
+            <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-zinc-900 dark:text-white text-center">
               Experiencia Demo
             </h1>
           </div>
 
           {/* Tab Navigation */}
-          <div className="flex gap-1 bg-zinc-900/50 p-1.5 rounded-full border border-zinc-800/50 backdrop-blur-sm overflow-x-auto w-full md:w-auto items-center justify-start md:justify-center [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+          <div className="flex gap-1 bg-white dark:bg-zinc-900/50 p-1.5 rounded-full border border-zinc-200 dark:border-zinc-800/50 backdrop-blur-sm overflow-x-auto w-full md:w-auto items-center justify-start md:justify-center [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             {[
               { id: 'chat', label: 'Chat Bot', icon: MessageSquare },
               { id: 'conversaciones', label: 'Conversaciones', icon: Users },
@@ -893,8 +893,8 @@ const SimulatorPage = () => {
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex items-center gap-2 px-5 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${
                     isActive 
-                      ? 'bg-white text-black shadow-sm' 
-                      : 'text-zinc-400 hover:text-white hover:bg-zinc-800/50'
+                      ? 'bg-zinc-900 text-white dark:bg-white dark:text-black shadow-sm' 
+                      : 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:text-white hover:bg-zinc-100 hover:dark:bg-zinc-800/50'
                   }`}
                 >
                   <Icon className={`w-4 h-4`} />
@@ -906,7 +906,7 @@ const SimulatorPage = () => {
         </div>
 
         {/* Main Content Area - Glass Card */}
-        <div className="bg-zinc-950/50 backdrop-blur-xl border border-zinc-800/80 rounded-2xl p-6 md:p-8 shadow-2xl flex-1 flex flex-col min-h-0 overflow-hidden">
+        <div className="bg-zinc-50 dark:bg-zinc-950/50 backdrop-blur-xl border border-zinc-200 dark:border-zinc-800/80 rounded-2xl p-6 md:p-8 shadow-2xl flex-1 flex flex-col min-h-0 overflow-hidden">
           {activeTab === 'chat' && renderChatBot()}
           {activeTab === 'conversaciones' && renderConversaciones()}
           {activeTab === 'metricas' && renderMetricas()}
