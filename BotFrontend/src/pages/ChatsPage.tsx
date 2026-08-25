@@ -345,8 +345,15 @@ export default function ChatsPage() {
                         <div className={`flex max-w-[80%] space-x-3 ${isBot ? 'flex-row-reverse space-x-reverse' : 'flex-row'}`}>
                           <div className="shrink-0 mt-1">
                             {isBot ? (
-                              <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-sky-500 to-blue-600 flex items-center justify-center shadow-lg shadow-sky-500/20">
-                                <Bot className="w-5 h-5 text-white" />
+                              <div className="w-8 h-8 rounded-full bg-zinc-900 dark:bg-white flex items-center justify-center shadow-md">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="w-5 h-5">
+                                  <path d="M55 35 V20 H40" stroke="currentColor" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" fill="none" className="text-white dark:text-black" />
+                                  <line x1="10" y1="55" x2="18" y2="55" stroke="currentColor" strokeWidth="8" strokeLinecap="round" className="text-white dark:text-black" />
+                                  <line x1="82" y1="55" x2="90" y2="55" stroke="currentColor" strokeWidth="8" strokeLinecap="round" className="text-white dark:text-black" />
+                                  <rect x="18" y="35" width="64" height="40" rx="12" stroke="currentColor" strokeWidth="8" fill="none" className="text-white dark:text-black" />
+                                  <rect x="34" y="48" width="10" height="18" rx="5" className="fill-sky-500" />
+                                  <rect x="56" y="48" width="10" height="18" rx="5" className="fill-sky-500" />
+                                </svg>
                               </div>
                             ) : (
                               <div className="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center">
