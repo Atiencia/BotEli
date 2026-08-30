@@ -46,7 +46,7 @@ function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen: (val: bool
       
       <aside className={`fixed md:relative w-64 h-screen border-r border-zinc-200/80 dark:border-zinc-800/80 bg-white/80 dark:bg-[#0a0a0a]/80 backdrop-blur-md flex flex-col z-30 transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}`}>
         <div className="p-6 flex items-center justify-between border-b border-zinc-200/80 dark:border-zinc-800/80">
-          <Link to="/" className="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
+          <Link to="/panel" className="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="w-8 h-8">
               <path d="M55 35 V20 H40" stroke="currentColor" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" fill="none" className="text-zinc-900 dark:text-white" />
               <line x1="10" y1="55" x2="18" y2="55" stroke="currentColor" strokeWidth="8" strokeLinecap="round" className="text-zinc-900 dark:text-white" />
@@ -118,7 +118,7 @@ function DashboardLayout() {
       
       <main className="flex-1 h-screen overflow-hidden flex flex-col z-10 relative">
         <div className="md:hidden flex items-center justify-between p-4 border-b border-zinc-200/80 dark:border-zinc-800/80 bg-white/80 dark:bg-[#0a0a0a]/80 backdrop-blur-md">
-          <Link to="/" className="flex items-center gap-2.5">
+          <Link to="/panel" className="flex items-center gap-2.5">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="w-6 h-6">
               <path d="M55 35 V20 H40" stroke="currentColor" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" fill="none" className="text-zinc-900 dark:text-white" />
               <line x1="10" y1="55" x2="18" y2="55" stroke="currentColor" strokeWidth="8" strokeLinecap="round" className="text-zinc-900 dark:text-white" />
